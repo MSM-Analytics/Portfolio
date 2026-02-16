@@ -7,12 +7,8 @@
       <div class="relative">
         <div class="absolute inset-0 rounded-full blur-xl bg-white/30"></div>
 
-        <img
-          [src]="info.photo"
-          (error)="onImgError($event)"
-          [alt]="info.name"
-          class="relative w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-white shadow-lg"
-        />
+        <img [src]="info.photo" (error)="onImgError($event)" [alt]="info.name"
+          class="relative w-36 h-36 md:w-44 md:h-44 rounded-full object-cover border-4 border-white shadow-lg" />
       </div>
 
       <!-- TEXTO -->
@@ -26,14 +22,9 @@
           {{ info.title }}
         </p>
 
-        <div
-          class="flex flex-wrap gap-4 justify-center md:justify-start text-sm md:text-base"
-        >
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start text-sm md:text-base">
 
-          <a
-            [href]="'mailto:' + info.email"
-            class="hover:text-blue-200 transition"
-          >
+          <a [href]="'mailto:' + info.email" class="hover:text-blue-200 transition">
             {{ info.email }}
           </a>
 
@@ -45,28 +36,16 @@
             {{ info.location }}
           </span>
 
-          <a
-            *ngIf="info.linkedin"
-            [href]="info.linkedin"
-            target="_blank"
-            class="hover:text-blue-200 transition"
-          >
+          <a *ngIf="info.linkedin" [href]="info.linkedin" target="_blank" class="hover:text-blue-200 transition">
             LinkedIn
           </a>
 
-          <a
-            *ngIf="info.github"
-            [href]="info.github"
-            target="_blank"
-            class="hover:text-blue-200 transition"
-          >
+          <a *ngIf="info.github" [href]="info.github" target="_blank" class="hover:text-blue-200 transition">
             GitHub
           </a>
 
         </div>
-
       </div>
     </div>
-
   </div>
 </header>

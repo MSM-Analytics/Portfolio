@@ -1,11 +1,23 @@
 <section class="py-12 bg-gray-50">
-  <div class="container mx-auto px-4 md:px-6">
-    <h2 class="text-3xl font-bold text-gray-800 mb-8">Habilidades</h2>
+    <!-- SECTION HEADER (PDF-friendly) -->
+    <h2
+      class="
+        text-3xl font-bold text-gray-800 mb-8
+        pdf-section-title
+      "
+    >
+      Habilidades
+    </h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
       <div
         *ngFor="let skill of skills"
-        class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition"
+        class="
+          bg-white rounded-lg shadow-md p-6
+          hover:shadow-lg transition
+          pdf-item
+        "
       >
         <h3 class="text-lg font-bold text-blue-600 mb-4">
           {{ skill.category }}
@@ -19,7 +31,7 @@
             {{ item }}
           </span>
         </div>
+
       </div>
     </div>
-  </div>
 </section>
