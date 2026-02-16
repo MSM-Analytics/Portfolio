@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist RBAC ADMIN_MASTER</title>
+  <script>
+    // Salva o estado dos checkboxes no localStorage para manter marcado ao atualizar a página
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('input[type=checkbox]');
+      checkboxes.forEach(cb => {
+        const key = cb.id;
+        const saved = localStorage.getItem(key);
+        if (saved === 'true') cb.checked = true;
+        cb.addEventListener('change', () => {
+          localStorage.setItem(key, cb.checked);
+        });
+      });
+    });
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 p-4">
+
+  <h1 class="text-2xl font-bold mb-4">Checklist de Teste RBAC — ADMIN_MASTER</h1>
+
+  <!-- 1️⃣ Autenticação -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">1️⃣ Autenticação</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="login" /> POST /auth/login — Recebe token e usuário logado</li>
+      <li><input type="checkbox" id="authMe" /> GET /auth/me — Retorna role e permissões</li>
+      <li><input type="checkbox" id="logout" /> Logout — Redireciona para /login</li>
+    </ul>
+  </section>
+
+  <!-- 2️⃣ Gestão / Dashboard -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">2️⃣ Gestão / Dashboard</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="gestao" /> Página /gestao acessível, layout renderiza</li>
+      <li><input type="checkbox" id="dashboardKpis" /> GET /gestao/dashboard/kpis</li>
+      <li><input type="checkbox" id="chartsSalesDay" /> GET /gestao/dashboard/charts/sales-by-day</li>
+      <li><input type="checkbox" id="chartsSalesCategory" /> GET /gestao/dashboard/charts/sales-by-category</li>
+      <li><input type="checkbox" id="chartsPaymentMethods" /> GET /gestao/dashboard/charts/payment-methods</li>
+      <li><input type="checkbox" id="chartsTopProducts" /> GET /gestao/dashboard/charts/top-products</li>
+      <li><input type="checkbox" id="alerts" /> GET /gestao/dashboard/alerts/</li>
+      <li><input type="checkbox" id="monthlyGoal" /> GET /gestao/dashboard/goals/monthly</li>
+      <li><input type="checkbox" id="monthlyForecast" /> GET /gestao/dashboard/forecast/monthly</li>
+    </ul>
+  </section>
+
+  <!-- 3️⃣ Categories -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">3️⃣ Categories</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="catView" /> GET /gestao/categories/</li>
+      <li><input type="checkbox" id="catCreate" /> POST /gestao/categories/categories/</li>
+      <li><input type="checkbox" id="catUpdate" /> PUT /gestao/categories/categories/{id}</li>
+    </ul>
+  </section>
+
+  <!-- 4️⃣ Products -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">4️⃣ Products</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="prodView" /> GET /gestao/products/</li>
+      <li><input type="checkbox" id="prodCreate" /> POST /gestao/products/products/</li>
+      <li><input type="checkbox" id="prodUpdate" /> PUT /gestao/products/products/{id}</li>
+    </ul>
+  </section>
+
+  <!-- 5️⃣ Users / Tenants -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">5️⃣ Users / Tenants</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="usersView" /> GET /gestao/users</li>
+      <li><input type="checkbox" id="tenantsCreate" /> POST /gestao/tenants</li>
+    </ul>
+  </section>
+
+  <!-- 6️⃣ Payment Methods -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">6️⃣ Payment Methods</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="pmView" /> GET /gestao/payment-methods/</li>
+      <li><input type="checkbox" id="pmCreate" /> POST /gestao/payment-methods/</li>
+      <li><input type="checkbox" id="pmUpdate" /> PUT /gestao/payment-methods/{id}</li>
+    </ul>
+  </section>
+
+  <!-- 7️⃣ Sales -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">7️⃣ Sales</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="salesCreate" /> POST /gestao/sales/sales/</li>
+      <li><input type="checkbox" id="salesView" /> GET /gestao/sales/</li>
+      <li><input type="checkbox" id="salesCancel" /> POST /gestao/sales/sales/{id}/cancel</li>
+      <li><input type="checkbox" id="salesAddPayment" /> POST /gestao/sales/{id}/payments</li>
+      <li><input type="checkbox" id="salesFilter" /> GET /gestao/sales/filter</li>
+    </ul>
+  </section>
+
+  <!-- 8️⃣ Refunds -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">8️⃣ Refunds</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="refundsCreate" /> POST /gestao/refunds/</li>
+    </ul>
+  </section>
+
+  <!-- 9️⃣ Cash Closure -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">9️⃣ Cash Closure</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="cashCreate" /> POST /gestao/cash-closure/cash-closure/</li>
+      <li><input type="checkbox" id="cashExport" /> GET /gestao/cash-closure/export/csv|excel|pdf</li>
+      <li><input type="checkbox" id="cashReopen" /> POST /gestao/cash-closure/cash-closure/{id}/reopen</li>
+      <li><input type="checkbox" id="cashSummary" /> GET /gestao/cash-closure/{id}/summary</li>
+    </ul>
+  </section>
+
+  <!-- 🔟 Reports / Exportações -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">🔟 Reports / Exportações</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="reportsView" /> GET /gestao/reports/ e /gestao/exports/ (todos endpoints)</li>
+    </ul>
+  </section>
+
+  <!-- 1️⃣1️⃣ Auditoria -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">1️⃣1️⃣ Auditoria</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="auditView" /> GET /gestao/audit/</li>
+    </ul>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist Estrutura Angular</title>
+  <script>
+    // Salva estado no localStorage
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkboxes = document.querySelectorAll('input[type=checkbox]');
+      checkboxes.forEach(cb => {
+        const key = cb.id;
+        const saved = localStorage.getItem(key);
+        if (saved === 'true') cb.checked = true;
+        cb.addEventListener('change', () => {
+          localStorage.setItem(key, cb.checked);
+        });
+      });
+    });
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 p-6">
+
+  <h1 class="text-2xl font-bold mb-6">Checklist Estrutura Projeto Angular</h1>
+
+  <!-- 1️⃣ Layouts -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">1️⃣ Layouts</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="protectedLayout" /> ProtectedLayout — sidebar + menu + logout</li>
+      <li><input type="checkbox" id="publicLayout" /> PublicLayout (opcional) — layout de login</li>
+    </ul>
+  </section>
+
+  <!-- 2️⃣ Core -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">2️⃣ Core</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="authService" /> auth.service.ts — login, logout, token, hasPermission(action: string)</li>
+      <li><input type="checkbox" id="authGuard" /> auth.guard.ts — protege rotas</li>
+      <li><input type="checkbox" id="tokenStorage" /> token.storage.ts — gerenciar token no localStorage</li>
+      <li><input type="checkbox" id="hasPermissionDirective" /> has-permission.directive.ts (opcional) — mostrar/esconder elementos por ação</li>
+    </ul>
+  </section>
+
+  <!-- 3️⃣ Pages -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">3️⃣ Pages</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="loginPage" /> /login — login form</li>
+      <li><input type="checkbox" id="gestaoPage" /> /gestao — dashboard principal com &lt;router-outlet&gt;</li>
+      <li><input type="checkbox" id="categoriesPage" /> /gestao/categories — CRUD básico</li>
+      <li><input type="checkbox" id="productsPage" /> /gestao/products — CRUD básico</li>
+      <li><input type="checkbox" id="usersPage" /> /gestao/users — CRUD básico</li>
+      <li><input type="checkbox" id="tenantsPage" /> /gestao/tenants — CRUD básico</li>
+      <li><input type="checkbox" id="paymentMethodsPage" /> /gestao/payment-methods — CRUD básico</li>
+      <li><input type="checkbox" id="salesPage" /> /gestao/sales — CRUD básico</li>
+      <li><input type="checkbox" id="refundsPage" /> /gestao/refunds — CRUD básico</li>
+      <li><input type="checkbox" id="cashClosurePage" /> /gestao/cash-closure — CRUD básico</li>
+      <li><input type="checkbox" id="reportsPage" /> /gestao/reports — listagem / export</li>
+      <li><input type="checkbox" id="auditPage" /> /gestao/audit — listagem</li>
+    </ul>
+  </section>
+
+  <!-- 4️⃣ Config -->
+  <section class="mb-6">
+    <h2 class="text-xl font-semibold mb-2">4️⃣ Config</h2>
+    <ul class="space-y-1">
+      <li><input type="checkbox" id="appRoutes" /> app.routes.ts — todas as rotas com authGuard e actions</li>
+      <li><input type="checkbox" id="menuConfig" /> menu.config.ts — menu filtrado por hasPermission()</li>
+    </ul>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Skill } from '../../../models/curriculum.model';
+
+/*
+@Component({
+  selector: 'app-skills',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8">Habilidades</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div *ngFor="let skill of skills" class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-bold text-blue-600 mb-4">{{ skill.category }}</h3>
+            <div class="flex flex-wrap gap-2">
+              <span *ngFor="let item of skill.items"
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                {{ item }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `
+})
+export class SkillsComponent {
+  @Input() skills!: Skill[];
+}
+*/
+
+@Component({
+  selector: 'app-skills',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './skills.component.html'
+})
+export class SkillsComponent {
+  @Input() skills!: Skill[];
+}
