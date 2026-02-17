@@ -87,7 +87,8 @@ function buildHeader(data: Curriculum) {
             width: '*',
             stack: [
               { text: info.name, style: 'headerName' },
-              { text: info.title, style: 'headerTitle' }
+              { text: info.title, style: 'headerTitle' },
+              { text: info.email, style: 'headerContact' }
             ]
           },
           {
@@ -95,7 +96,6 @@ function buildHeader(data: Curriculum) {
             alignment: 'right',
             stack: [
               { text: info.location, style: 'headerContact' },
-              { text: info.email, style: 'headerContact' },
               info.linkedin ? { text: info.linkedin, style: 'headerContact' } : {},
               info.github ? { text: info.github, style: 'headerContact' } : {}
             ]
