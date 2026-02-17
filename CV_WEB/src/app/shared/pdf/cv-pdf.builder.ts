@@ -87,8 +87,8 @@ function buildHeader(data: Curriculum) {
             width: '*',
             stack: [
               { text: info.name, style: 'headerName' },
-              { text: info.title, style: 'headerTitle' },
-              { text: info.email, style: 'headerContact' }
+              { text: info.email, style: 'headerContact' },
+              { text: info.title, style: 'headerTitle' }
             ]
           },
           {
