@@ -10,7 +10,7 @@ export const HOME_DATA: Curriculum = {
     phone: '+55 41 99911-4530',
     location: 'Curitiba, PR - Brasil',
     linkedin: 'https://www.linkedin.com/in/rodrigo-matos-747b40116',
-    github: 'https://github.com/MSM-Analytics'
+    github: 'https://github.com/MSM-Analytics/Portfolio/tree/main'
   },
 
 
