@@ -11,7 +11,7 @@ export const HOME_ANALISTA: Curriculum = {
     title: 'Analista de Dados',
     email: 'rbmgestao@gmail.com',
     phone: '+55 41 99911-4530',
-    linkedin: 'www.linkedin.com/in/rodrigo-matos-747b40116',
+    linkedin: 'https://www.linkedin.com/in/rodrigo-matos-747b40116',
     github: 'https://github.com/MSM-Analytics/Portfolio/tree/main'
   },
 
