@@ -1,37 +1,39 @@
 import { Curriculum } from '../../models/curriculum.model';
 
 
-export const HOME_DATA: Curriculum = {
+export const HOME_ANALISTA: Curriculum = {
   personalInfo: {
     photo: 'assets/images/foto_rodrigo.jpg',
     name: 'Rodrigo Barros de Matos',
-    title: 'Programador Web',
+    maritalStatus: 'Solteiro',
+    birthDate: '1984-08-03',
+    address: 'Av. Água Verde, 1.575 - Água Verde - Curitiba, PR',
+    title: 'Analista de Dados',
     email: 'rbmgestao@gmail.com',
     phone: '+55 41 99911-4530',
-    location: 'Curitiba, PR - Brasil',
-    linkedin: 'https://www.linkedin.com/in/rodrigo-matos-747b40116',
+    linkedin: 'www.linkedin.com/in/rodrigo-matos-747b40116',
     github: 'https://github.com/MSM-Analytics/Portfolio/tree/main'
   },
 
 
-  summary: 'Programador Web com experiência acadêmica nas seguintes linguagens, Angular, React, Python, Java, PHP, SQL, HTML e CSS. Busco constantemente aprender novas tecnologias e aplicar as melhores práticas de desenvolvimento para criar soluções eficientes e escaláveis. Busco uma oportunidade de colocar em prática todo o conhecimento acadêmico adiquirido e alcançar o objetivo de migrar para carreira de programador',
+  summary: 'Analista de Dados com mais de 12 anos de experiência em consultoria empresarial, atuando na análise de processos, definição de KPIs e desenvolvimento de relatórios estratégicos para melhoria de desempenho e redução de custos. Experiência em ETL, modelagem e visualização de dados com Power BI, além de tratamento e análise utilizando SQL e Python. Possuo forte visão de negócio, capacidade analítica e habilidade em transformar dados em insights claros para apoiar a tomada de decisão e otimização de resultados.',
 
   skills: [
     {
-      category: 'Frontend',
-      items: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap']
+      category: 'POWER BI',
+      items: ['ETL/ELT', 'Modelagem de dados', 'Linguagem M', 'Linguagem DAX', 'Data Storytelling', 'Análise Exploratória', 'Insights']
     },
     {
-      category: 'Backend',
-      items: ['Python', 'Java', 'PHP']
+      category: 'Python',
+      items: ['Pandas', 'NunPy', 'Matchplotlib', 'SQL Alchemy']
     },
     {
-      category: 'Banco de Dados',
-      items: ['PostgreSQL', 'MySQL', 'Firebird']
+      category: 'SQL',
+      items: ['Tratamento de dados', 'Query', 'View', 'Join']
     },
     {
       category: 'Ferramentas',
-      items: ['VS Code', 'Git', 'Github', 'Squarespace', 'Figma', 'Slack', 'Data Brix', 'Power BI', 'Docker', 'Chat GPT']
+      items: ['Figma', 'Data Brix', 'Power BI', 'Chat GPT']
     },
     {
       category: 'Soft Skills',
@@ -99,30 +101,6 @@ export const HOME_DATA: Curriculum = {
       ]
     },
     {
-      degree: 'Curso Técnico em Programação Web',
-      institution: 'SENAC Portão',
-      location: 'Curitiba, PR',
-      startDate: '2021',
-      endDate: '2021',
-      description: [
-        'HTML',
-        'CSS',
-        'PHP introdução - CRUD'
-      ]
-    },
-    {
-      degree: 'Curso Técnico em Programação Web',
-      institution: 'Alura',
-      location: 'Online',
-      startDate: '2022',
-      endDate: '2022',
-      description: [
-        'Python',
-        'PHP - Láravel',
-        'Java Web',
-      ]
-    },
-    {
       degree: 'Curso Técnico em Análise de Dados',
       institution: 'Xperiun',
       location: 'Online',
@@ -142,4 +120,4 @@ export const HOME_DATA: Curriculum = {
       ]
     }
   ]
-};
+}

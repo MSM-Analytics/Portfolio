@@ -1,0 +1,53 @@
+<div class="relative w-full h-screen">
+
+  <!-- SITE -->
+  <iframe [src]="projectUrl" class="absolute inset-0 w-full h-full border-none bg-white">
+  </iframe>
+
+  <!-- BARRA SUPERIOR (OVERLAY) -->
+  <div class="
+      absolute
+      top-0
+      left-0
+      w-full
+      flex
+      items-center
+      justify-between
+      px-6
+      py-3
+      text-white
+      z-50
+    ">
+
+    <a routerLink="/portfolio/programador" class="
+    flex
+    items-center
+    justify-center
+    h-10
+    w-10
+    rounded-full
+    bg-white/90
+    hover:bg-white
+    text-black
+    shadow-lg
+    backdrop-blur
+    transition
+    duration-200
+    hover:scale-110
+    hover:shadow-xl
+    animate-[blink_1s_infinite]
+  ">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+
+      </svg>
+    </a>
+
+    <span class="text-sm text-white/70">
+      Preview do Projeto
+    </span>
+
+  </div>
+
+</div>

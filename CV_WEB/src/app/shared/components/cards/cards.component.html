@@ -1,0 +1,43 @@
+<div class="overflow-hidden flex flex-col md:flex-row h-64 md:h-56 m-6">
+
+  <!-- conteúdo -->
+  <div class="w-[100%] flex flex-col h-full">
+
+    <h2
+      class="text-lg font-bold text-neutral-950"
+      [class.order-3]="invertido"
+    >
+      {{ titulo }}
+    </h2>
+
+    <p
+      class="text-neutral-200 h-auto text-sm mt-4 mb-4"
+      [class.order-2]="invertido"
+    >
+      {{ descricao }}
+    </p>
+
+    <div
+      class="mt-4 mb-4 flex gap-3"
+      [class.order-1]="invertido"
+    >
+
+      <button
+        class="bg-blue-400/70 hover:bg-blue-400/50 text-white py-2 px-4 rounded-lg transition w-full tracking-wide"
+        (click)="abrirCurriculo()"
+      >
+        Currículum
+      </button>
+
+      <button
+        class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white py-2 px-4 rounded-lg transition w-full tracking-wide"
+        (click)="abrirPortfolioClick()"
+      >
+        Portfólio
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

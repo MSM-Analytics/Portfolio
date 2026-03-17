@@ -3,21 +3,18 @@
     <h2
       class="
         text-3xl font-bold text-gray-800 mb-8
-        pdf-section-title
+        pdf-section-title pl-6
       "
     >
       Formação Acadêmica
     </h2>
 
     <div class="space-y-6">
-
-      <div
-        *ngFor="let edu of education"
-        class="
-          bg-gray-50 rounded-lg shadow p-6
-          pdf-item
-        "
-      >
+      <div *ngFor="let edu of education" class="
+          bg-gray-50 rounded-lg shadow-md p-10
+            hover:shadow-lg transition
+            pdf-item max-w-[97%] mx-auto
+        ">
         <div
           class="flex flex-col md:flex-row md:justify-between md:items-start mb-3"
         >

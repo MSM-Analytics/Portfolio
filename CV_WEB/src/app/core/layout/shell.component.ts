@@ -2,19 +2,17 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-import { HeaderComponent } from '../../shared/components/header/header.component';
-import { HOME_DATA } from '../../features/home/home.data';
+import { HOME_PERSONAL } from '../../features/home/personal.data';
 
 @Component({
   selector: 'app-shell',
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
-    HeaderComponent
+    RouterOutlet
   ],
   templateUrl: './shell.component.html'
 })
 export class ShellComponent {
-  data = HOME_DATA;
+  data = HOME_PERSONAL;
 }
