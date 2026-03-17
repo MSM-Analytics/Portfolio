@@ -11,7 +11,7 @@ export const HOME_PROGRAMADOR: Curriculum = {
     title: 'Programador Web',
     email: 'rbmgestao@gmail.com',
     phone: '+55 41 99911-4530',
-    linkedin: 'http://www.linkedin.com/in/rodrigo-matos-747b40116',
+    linkedin: 'https://www.linkedin.com/in/rodrigo-matos-747b40116',
     github: 'https://github.com/MSM-Analytics/Portfolio/tree/main'
   },
 
