@@ -96,14 +96,14 @@
   ">
 
     <!-- CARD ESQUERDA -->
-    <div class="absolute left-8 top-14 mt-1 max-w-[450px] animate-slideLeft font-inter">
+    <div class="absolute left-8 top-14 mt-1 max-w-[450px] animate-slideLeft">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
       </app-cards>
     </div>
 
     <!-- CARD DIREITA -->
-    <div class="absolute right-8 bottom-4 max-w-[450px] text-right animate-slideRight font-inter">
+    <div class="absolute right-8 bottom-4 max-w-[450px] text-right animate-slideRight">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
       </app-cards>
