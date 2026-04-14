@@ -4,24 +4,24 @@
   <img src="assets/images/bg-dados.png" class="absolute inset-0 w-full h-full object-cover" />
 
   <!-- BG Content-->
-   <div class="absolute inset-0 ml-7 animate-reveal-left">
+   <div class="hidden md:block absolute inset-0 ml-7 animate-reveal-left">
      <img src="assets/images/img-left.png" alt="left"/>
    </div>
 
-   <div class="absolute bottom-0 right-0 mr-7 animate-reveal-right">
+   <div class="hidden md:block absolute bottom-0 right-0 mr-7 animate-reveal-right">
      <img src="assets/images/img-right.png" alt="right"/>
    </div>
 
   <!-- CONTEÚDO CENTRAL -->
   <div class="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6">
 
-    <h1 class="text-2xl md:text-3xl font-bold leading-tight text-white mb-6 bg-neutral-800/50 px-4 py-1 rounded-md">
+    <h1 class="text-1xl md:text-3xl font-bold leading-tight text-white mb-6 bg-neutral-800/50 px-4 py-1 rounded-md">
       {{ info.name }}
     </h1>
 
     <!-- FOTO -->
     <img [src]="info.photo" (error)="onImgError($event)" class="
-        w-56 h-56
+        w-36 h-36
         md:w-64 md:h-64
         lg:w-72 lg:h-72
         rounded-full
@@ -36,7 +36,9 @@
     <div class="text-white mt-6 animate-fadeDown z-10">
 
       <!-- info pessoal -->
-      <p class="text-sm text-neutral-200 mt-3 bg-neutral-800/50 px-4 py-1 rounded-md">
+      <p class="bg-neutral-800/50 rounded-md
+                text-xs text-neutral-200 mt-3 px-4 py-1
+                md:text-sm md:text-neutral-200 md:mt-3 md:px-4 md:py-1">
         <span *ngIf="info.maritalStatus">
           {{ info.maritalStatus }}
         </span>
@@ -55,7 +57,9 @@
 
         <!-- email -->
         <a [href]="'mailto:' + info.email"
-          class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md">
+          class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md 
+          text-xs
+          md:text-md">
           <!-- icon -->
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M4 6h16v12H4z" />
@@ -66,7 +70,9 @@
 
         <!-- whatsapp -->
         <a [href]="'https://wa.me/' + info.phone.replace(/\\D/g,'')" target="_blank"
-          class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md">
+          class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md
+          text-xs
+          md:text-md">
 
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -84,26 +90,33 @@
 
   <!-- OPÇÕES PROFISSIONAIS -->
   <div *ngIf="cards.length >= 2" class="
-  absolute
-  top-1/2
-  left-1/2
-  -translate-x-1/2
-  -translate-y-1/2
-  w-full
-  max-w-8xl
-  h-full
-  z-20
+    z-20
+    /* Mobile */
+    flex flex-col items-center justify-center gap-2 w-full h-full px-4
+    /* Notbook */
+    md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-8xl md:h-full
   ">
 
     <!-- CARD ESQUERDA -->
-    <div class="absolute left-8 top-14 mt-1 max-w-[450px] animate-slideLeft">
+    <div class="
+    w-full animate-slideLeft
+    /* Mobile */
+
+    /*Noteboon*/
+    md:absolute md:max-w-[450px] md:left-8 md:top-14 md:mt-1">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
       </app-cards>
     </div>
 
     <!-- CARD DIREITA -->
-    <div class="absolute right-8 bottom-4 max-w-[450px] text-right animate-slideRight">
+    <div class="
+    w-full animate-slideLeft
+    /* Mobile */
+
+    /*Noteboon*/
+    md:absolute md:max-w-[450px] md:right-8 md:bottom-16 md:text-right
+    ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
       </app-cards>

@@ -1,36 +1,68 @@
-<div class="overflow-hidden flex flex-col md:flex-row h-64 md:h-56 m-6">
+<div class="
+  h-auto
+  /* Mobile */
+  sm:overflow-hidden sm:flex sm:flex-col sm:justify-center sm:p-4
+  /* Notbook*/
+  md:overflow-hidden md:flex md:flex-row md:m-[2%]"
+>
 
   <!-- conteúdo -->
-  <div class="w-[100%] flex flex-col h-full">
+  <div class="w-full flex flex-row flex-wrap justify-center h-full
+  /* Mobile */
+  
+  /* Notebook */
+  md:gap-4
+  ">
 
     <h2
-      class="text-lg font-bold text-neutral-950"
-      [class.order-3]="invertido"
+      class="
+        font-bold text-white w-full text-center
+        /* Mobile */
+        sm:text-sm
+        /* Notebook */
+        md:text-lg md:font-bold md:text-neutral-950  md:flex md:flex-col
+        "
+      [ngClass]="invertido ? 'md:text-right md:order-3' : 'md:text-start md:order-1'"
     >
       {{ titulo }}
     </h2>
 
     <p
-      class="text-neutral-200 h-auto text-sm mt-4 mb-4"
-      [class.order-2]="invertido"
+      class="
+      text-neutral-200 h-auto hidden
+      /* Mobile */
+      
+      /* Notbook*/
+      md:block text-sm mt-4 mb-4"
+      [ngClass]="invertido ? 'md:order-2' : 'md:order-2'"
     >
       {{ descricao }}
     </p>
 
     <div
       class="mt-4 mb-4 flex gap-3"
-      [class.order-1]="invertido"
+      [class.order-3]="invertido"
+      [ngClass]="invertido ? 'md:order-1' : 'md:order-3'"
     >
 
       <button
-        class="bg-blue-400/70 hover:bg-blue-400/50 text-white py-2 px-4 rounded-lg transition w-full tracking-wide"
+        class="
+        bg-blue-400/70 hover:bg-blue-400/50 text-white rounded-lg transition w-full tracking-wide text-xs py-1 px-2
+        /* Mobile */
+        
+        /* Notebook */
+        md:py-2 md:px-4"
         (click)="abrirCurriculo()"
       >
         Currículum
       </button>
 
       <button
-        class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white py-2 px-4 rounded-lg transition w-full tracking-wide"
+        class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white rounded-lg transition w-full tracking-wide text-xs py-1 px-2
+        /* Mobile */
+        
+        /* Notebook */
+        md:text-md md:py-2 md:px-4"
         (click)="abrirPortfolioClick()"
       >
         Portfólio
