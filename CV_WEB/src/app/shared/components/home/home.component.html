@@ -1,4 +1,6 @@
-<header class="relative w-full h-[100dvh] overflow-hidden flex flex-col justify-between">
+<header class="relative w-full min-h-[100svh] overflow-hidden flex flex-col justify-between
+md:min-h-screen
+">
 
   <!-- BACKGROUND -->
   <img src="assets/images/bg-dados.png" class="absolute inset-0 w-full h-full object-cover" />
@@ -112,7 +114,7 @@
     w-full animate-slideLeft
 
     /*Noteboon*/
-    md:absolute md:max-w-[450px] md:left-8 md:top-14 md:mt-2">
+    md:absolute md:max-w-[450px] md:left-8 md:top-14 md:mt-1">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
       </app-cards>
