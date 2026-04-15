@@ -1,9 +1,8 @@
 <div class="
   h-auto
   /* Mobile */
-  sm:overflow-hidden sm:flex sm:flex-col sm:justify-center sm:p-4
-  /* Notbook*/
-  md:overflow-hidden md:flex md:flex-row md:m-[2%]"
+  overflow-hidden flex flex-col justify-center p-2
+  md:overflow-hidden md:flex md:flex-row md:m-[2%] md:p-4"
 >
 
   <!-- conteúdo -->
@@ -40,29 +39,30 @@
     </p>
 
     <div
-      class="mt-4 mb-4 flex gap-3"
+      class="mt-1 mb-1 flex gap-1 justify-center w-full
+      md:gap-4 md:mt-4 md:mb-4"
       [class.order-3]="invertido"
-      [ngClass]="invertido ? 'md:order-1' : 'md:order-3'"
+      [ngClass]="invertido ? 'md:justify-end md:order-1' : 'md:justify-start md:order-3'"
     >
 
       <button
         class="
-        bg-blue-400/70 hover:bg-blue-400/50 text-white rounded-lg transition w-full tracking-wide text-xs py-1 px-2
         /* Mobile */
+        bg-blue-400/70 hover:bg-blue-400/50 text-white rounded-lg transition w-[30%] tracking-wide text-xs py-1 px-2
         
         /* Notebook */
-        md:py-2 md:px-4"
+        md:py-2 md:px-6 md:text-md"
         (click)="abrirCurriculo()"
       >
         Currículum
       </button>
 
       <button
-        class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white rounded-lg transition w-full tracking-wide text-xs py-1 px-2
+        class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white rounded-lg transition w-[30%] tracking-wide text-xs py-1 px-2
         /* Mobile */
         
         /* Notebook */
-        md:text-md md:py-2 md:px-4"
+        md:text-md md:py-2 md:px-6"
         (click)="abrirPortfolioClick()"
       >
         Portfólio

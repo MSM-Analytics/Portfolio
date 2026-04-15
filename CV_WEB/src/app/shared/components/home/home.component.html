@@ -13,9 +13,15 @@
    </div>
 
   <!-- CONTEÚDO CENTRAL -->
-  <div class="relative z-10 flex flex-col items-center justify-center text-center min-h-screen px-6">
+  <div class="
+  relative z-10 flex flex-col items-center justify-start pt-6 text-center min-h-full px-6 mb-3
+  /* Notebook */
+  md:justify-center md:mb-4
+  ">
 
-    <h1 class="text-1xl md:text-3xl font-bold leading-tight text-white mb-6 bg-neutral-800/50 px-4 py-1 rounded-md">
+    <h1 class="text-1xl font-bold leading-tight text-white mb-4 bg-neutral-800/50 px-4 py-1 rounded-md
+    md:text-3xl md:mb-12
+    ">
       {{ info.name }}
     </h1>
 
@@ -33,7 +39,8 @@
       " />
 
     <!-- TEXTO -->
-    <div class="text-white mt-6 animate-fadeDown z-10">
+    <div class="text-white mt-1 animate-fadeDown z-10
+    md:mt-6">
 
       <!-- info pessoal -->
       <p class="bg-neutral-800/50 rounded-md
@@ -53,7 +60,9 @@
       </p>
 
       <!-- contatos -->
-      <div class="flex flex-col items-center gap-2 mt-6">
+      <div class="flex flex-col items-center gap-1 mt-1
+      md:mt-6 md:gap-2
+      ">
 
         <!-- email -->
         <a [href]="'mailto:' + info.email"
@@ -92,15 +101,15 @@
   <div *ngIf="cards.length >= 2" class="
     z-20
     /* Mobile */
-    flex flex-col items-center justify-center gap-2 w-full h-full px-4
+    flex flex-row flex-wrap justify-center gap-1 w-full px-4 h-full
     /* Notbook */
-    md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-8xl md:h-full
+    md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-8xl md:gap-2
   ">
 
     <!-- CARD ESQUERDA -->
     <div class="
-    w-full animate-slideLeft
     /* Mobile */
+    w-full animate-slideLeft
 
     /*Noteboon*/
     md:absolute md:max-w-[450px] md:left-8 md:top-14 md:mt-1">
