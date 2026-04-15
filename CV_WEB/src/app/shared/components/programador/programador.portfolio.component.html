@@ -18,10 +18,7 @@
     gap-6
   ">
 
-    <a
-      *ngFor="let item of projects"
-      [routerLink]="['/projeto', item.id]"
-      class="
+    <a *ngFor="let item of projects" [routerLink]="['/projeto', item.id]" class="
         group
         relative
         rounded-xl
@@ -32,24 +29,19 @@
         transition
         duration-300
         hover:scale-105
-      "
-    >
+      ">
 
       <!-- IMAGE -->
       <div class="relative h-48 overflow-hidden">
 
-        <img
-          [src]="item.thumbnail"
-          [alt]="item.title"
-          class="
+        <img [src]="item.thumbnail" [alt]="item.title" class="
             w-full
             h-full
             object-cover
             transition
             duration-500
             group-hover:scale-110
-          "
-        />
+          " />
 
         <!-- GRADIENT OVERLAY -->
         <div class="
@@ -100,16 +92,13 @@
         <!-- TAGS -->
         <div class="flex flex-wrap gap-2">
 
-          <span
-            *ngFor="let tag of item.tags"
-            class="
+          <span *ngFor="let tag of item.tags" class="
               text-xs
               bg-green-600/20
               text-green-400
               px-2 py-1
               rounded
-            "
-          >
+            ">
             {{ tag }}
           </span>
 
@@ -120,12 +109,10 @@
     </a>
 
   </div>
-  
-  <div class="mb-6">
 
-<a
-    routerLink="/"
-    class="
+  <div class="mb-6 relative">
+
+    <a routerLink="/" class="
       absolute
       top-6
       right-6
@@ -143,11 +130,10 @@
       duration-200
       shadow-lg
       backdrop-blur
-    "
-  >
-    ← Home
-  </a>
+    ">
+      ← Home
+    </a>
 
-</div>
+  </div>
 
 </section>
