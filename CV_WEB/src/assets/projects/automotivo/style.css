@@ -316,10 +316,12 @@
 
                         & .car-inf {
                             font-size: 14px;
+                            margin-top: 10rem;
                         }
-
+                        
                         & h2 {
                             font-size: 36px;
+                            margin-top: 10rem;
                         }
 
                         & button:not(.toggle-btn) {
