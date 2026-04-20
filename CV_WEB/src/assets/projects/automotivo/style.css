@@ -241,6 +241,7 @@
             position: relative;
             height: 100vh;
             padding: 40px;
+            box-sizing: border-box;
             overflow: hidden;
             display: flex;
             align-items: center;
