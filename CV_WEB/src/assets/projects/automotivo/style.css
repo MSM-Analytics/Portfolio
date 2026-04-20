@@ -397,7 +397,7 @@
                         position: relative;
                         width: 100%;
                         margin-top: auto;
-                        bottom: 6rem;
+                        bottom: 8rem;
                         text-align:justify !important;
                         font-size: clamp(8px, 3vw, 16px) !important;
                         line-height: 1.5;
