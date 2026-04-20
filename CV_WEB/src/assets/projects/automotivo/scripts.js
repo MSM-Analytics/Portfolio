@@ -53,3 +53,18 @@ next.onclick = () => {
     item[active].classList.add('active') // seleciona o item anterior e atribui a classe active
     dot[active].classList.add('active') // seleciona o indicador anterior e atribui a classe active
 }
+
+// Description toogle
+
+function toggleDescricao(btn) {
+    const item = btn.closest('.item.active');
+    if (!item) return;
+
+    const desc = item.querySelector('.description');
+    const icon = btn.querySelector('.arrow-icon');
+
+    if (!desc) return;
+
+    desc.classList.toggle('show');
+    icon.classList.toggle('rotate');
+}

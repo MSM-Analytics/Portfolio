@@ -20,64 +20,109 @@
 
 <body>
     <header class="header">
-                <img src="./img/logo.png" alt="logo" class="img-logo">
-            <nav>
-                <ul class="menu">
-                    <li class="item-menu">home</li>
-                    <li class="item-menu">carros</li>
-                    <li class="item-menu">fale conosco</li>
-                </ul>
-            </nav>
+        <img src="./img/logo.png" alt="logo" class="img-logo">
+        <nav>
+            <ul class="menu">
+                <li class="item-menu">home</li>
+                <li class="item-menu">carros</li>
+                <li class="item-menu">fale conosco</li>
+            </ul>
+        </nav>
     </header>
-<section class="container">
-    <div class="list">
-        <div class="item active">
-            <div class="car-img">
-                <img src="./img/1.png" alt="img-1">
+    <section class="container">
+        <div class="list">
+            <div class="item active">
+                <div class="car-img">
+                    <img src="./img/1.png" alt="img-1">
+                </div>
+                <div class="content">
+                    <p class="car-inf">único dono</p>
+                    <h2 class="title">911 turbo</h2>
+                    <div class="toggle-wrapper">
+                        <span class="toggle-label">Descrição</span>
+    
+                        <div class="toggle-line-button">
+                            <div class="line"></div>
+    
+                            <button class="toggle-btn" onclick="toggleDescricao(this)">
+                                <svg class="arrow-icon" viewBox="0 0 24 24">
+                                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="description" id="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                        consequuntur blanditiis voluptas, culpa nihil, reiciendis eos animi numquam, nostrum sint
+                        consectetur. Quam provident at neque accusantium nam minima error!</p>
+                    <button>saiba mais</button>
+                </div>
             </div>
-            <div class="content">
-                <p class="car-inf">único dono</p>
-                <h2 class="title">911 turbo</h2>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consequuntur blanditiis voluptas, culpa nihil, reiciendis eos animi numquam, nostrum sint consectetur. Quam provident at neque accusantium nam minima error!</p>
-                <button>saiba mais</button>
+            <div class="item">
+                <div class="car-img">
+                    <img src="./img/2.png" alt="img-2">
+                </div>
+                <div class="content">
+                    <p class="car-inf">conversível</p>
+                    <h2 class="title">ferrari</h2>
+                    <div class="toggle-wrapper">
+                        <span class="toggle-label">Descrição</span>
+    
+                        <div class="toggle-line-button">
+                            <div class="line"></div>
+    
+                            <button class="toggle-btn" onclick="toggleDescricao(this)">
+                                <svg class="arrow-icon" viewBox="0 0 24 24">
+                                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consequuntur
+                        blanditiis voluptas, culpa nihil, reiciendis eos animi numquam, nostrum sint consectetur. Quam
+                        provident at neque accusantium nam minima error!</p>
+                    <button>saiba mais</button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="car-img">
+                    <img src="./img/3.png" alt="img-3">
+                </div>
+                <div class="content">
+                    <p class="car-inf">2015</p>
+                    <h2 class="title">lamborghini</h2>
+                    <div class="toggle-wrapper">
+                        <span class="toggle-label">Descrição</span>
+    
+                        <div class="toggle-line-button">
+                            <div class="line"></div>
+    
+                            <button class="toggle-btn" onclick="toggleDescricao(this)">
+                                <svg class="arrow-icon" viewBox="0 0 24 24">
+                                    <path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consequuntur
+                        blanditiis voluptas, culpa nihil, reiciendis eos animi numquam, nostrum sint consectetur. Quam
+                        provident at neque accusantium nam minima error!</p>
+                    <button>saiba mais</button>
+                </div>
             </div>
         </div>
-        <div class="item">
-            <div class="car-img">
-                <img src="./img/2.png" alt="img-2">
-            </div>
-            <div class="content">
-                <p class="car-inf">conversível</p>
-                <h2 class="title">ferrari</h2>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consequuntur blanditiis voluptas, culpa nihil, reiciendis eos animi numquam, nostrum sint consectetur. Quam provident at neque accusantium nam minima error!</p>
-                <button>saiba mais</button>
-            </div>
+        <div class="arrow">
+            <button class="next" id="next"><img src="./img/arrow.png" alt="arrow"></button>
+            <button class="prev" id="prev"><img src="./img/arrow.png" alt="arrow"></button>
         </div>
-        <div class="item">
-            <div class="car-img">
-                <img src="./img/3.png" alt="img-3">
-            </div>
-            <div class="content">
-                <p class="car-inf">2015</p>
-                <h2 class="title">lamborghini</h2>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit consequuntur blanditiis voluptas, culpa nihil, reiciendis eos animi numquam, nostrum sint consectetur. Quam provident at neque accusantium nam minima error!</p>
-                <button>saiba mais</button>
-            </div>
+        <div class="indicators">
+            <div class="number"></div>
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
-    </div>
-    <div class="arrow">
-        <button class="next" id="next"><img src="./img/arrow.png" alt="arrow"></button>
-        <button class="prev" id="prev"><img src="./img/arrow.png" alt="arrow"></button>
-    </div>
-    <div class="indicators">
-        <div class="number"></div>
-        <ul>
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-</section>
+    </section>
 </body>
 <script src="./scripts.js"></script>
 
