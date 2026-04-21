@@ -103,6 +103,26 @@ function toggleDescricao(btn) {
 
 
 // ================= LOAD INICIAL =================
-window.onload = () => {
+
+window.addEventListener('DOMContentLoaded', () => {
+
+    document.body.classList.add('loaded')
+
+    const firstItem = document.querySelector('.item.active')
+    if (!firstItem) return
+
+    // força estado inicial IGUAL ao slide fora da tela
+    list.style.setProperty('--calculation', 1)
+
+    // tira active temporariamente
+    firstItem.classList.remove('active')
+
+    // força reflow REAL
+    firstItem.offsetHeight
+
+    // reaplica active → dispara animação
+    firstItem.classList.add('active')
+
+    // descrição depois da animação
     autoOpenDescription()
-}
+})
