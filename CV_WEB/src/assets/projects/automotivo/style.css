@@ -311,9 +311,7 @@
                         gap: 10px;
                         z-index: 4;
 
-                        & .car-inf,
-                        .title,
-                        .description,
+                        & .description,
                         button {
                             transform: none !important;
                             opacity: 1 !important;
@@ -412,8 +410,11 @@
                         opacity: 0;
                         max-height: 0;
                         overflow: hidden;
-                        transform: translateY(-10px);
-                        transition: all 0.3s ease;
+                        transform: translateY(-30px);
+                        transition:
+                            opacity 0.5s ease,
+                            transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                            max-height 0.6s ease;
                     }
 
                     & .description.show {
