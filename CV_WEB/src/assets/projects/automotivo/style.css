@@ -150,7 +150,12 @@
                     height: 200px;
                     width: 100%;
                     top: 50%;
-                    border-top: 1px solid #fff;
+                    border-top: none;
+                    height: 2px;
+                    background: linear-gradient(to right,
+                            transparent,
+                            rgba(255, 255, 255, 0.6),
+                            transparent);
                 }
             }
         }
@@ -416,12 +421,12 @@
                         max-height: 20vh;
                         transform: translateY(0);
                     }
-                }
 
-                & ::before {
-                    width: calc(100% - 80px);
-                    left: 50%;
-                    transform: translateX(-50%);
+                    &::before {
+                        width: 90vw;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
                 }
             }
 
@@ -430,11 +435,11 @@
             & .arrow {
                 position: absolute;
                 top: 50%;
-                left: 0;
-                width: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90vw;
                 display: flex;
                 justify-content: space-between;
-                transform: translateY(-50%);
                 z-index: 2;
             }
 
