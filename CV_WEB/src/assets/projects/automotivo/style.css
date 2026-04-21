@@ -253,6 +253,7 @@
             position: relative;
             height: 100vh;
             padding: 40px;
+            padding-bottom: 7.5rem;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -436,6 +437,7 @@
                 position: absolute;
                 top: 50%;
                 left: 50%;
+                padding-bottom: 5rem;
                 transform: translate(-50%, -50%);
                 width: 90vw;
                 display: flex;
@@ -446,6 +448,7 @@
             & .indicators {
                 position: absolute;
                 bottom: 1rem;
+                padding-bottom: 3rem;
                 left: 32%;
                 transform: translateX(-50%);
                 z-index: 0;
