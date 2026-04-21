@@ -448,7 +448,7 @@
             & .indicators {
                 position: absolute;
                 bottom: 1rem;
-                padding-bottom: 3rem;
+                padding-bottom: 3.5rem;
                 left: 32%;
                 transform: translateX(-50%);
                 z-index: 0;
