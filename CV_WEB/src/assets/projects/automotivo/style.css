@@ -172,7 +172,6 @@
             display: flex;
             justify-content: space-between;
 
-            /* 🔥 CORREÇÃO PRINCIPAL */
             z-index: 999;
 
             & button:nth-child(1) {
@@ -182,7 +181,9 @@
             }
 
             & button {
-                top: 60%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 4vw;
                 height: 4vw;
                 border-radius: 50%;
@@ -318,7 +319,7 @@
                             font-size: 14px;
                             margin-top: 8rem;
                         }
-                        
+
                         & h2 {
                             font-size: 36px;
                         }
@@ -399,7 +400,7 @@
                         width: 100%;
                         margin-top: auto;
                         margin-bottom: 5rem;
-                        text-align:justify !important;
+                        text-align: justify !important;
                         font-size: clamp(8px, 3vw, 16px) !important;
                         line-height: 1.5;
                         letter-spacing: 0.3px;
@@ -414,11 +415,6 @@
                         opacity: 1;
                         max-height: 20vh;
                         transform: translateY(0);
-                    }
-
-                    /* remove linha desktop */
-                    &::before {
-                        display: none;
                     }
                 }
             }
