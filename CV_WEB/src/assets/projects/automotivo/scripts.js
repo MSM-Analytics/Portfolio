@@ -126,3 +126,13 @@ window.addEventListener('DOMContentLoaded', () => {
     // descrição depois da animação
     autoOpenDescription()
 })
+
+function toggleMenu() {
+    const menu = document.querySelector('.menu')
+    const btn = document.querySelector('.menu-mobile-btn')
+
+    if (!menu || !btn) return
+
+    menu.classList.toggle('open')
+    btn.classList.toggle('active')
+}
