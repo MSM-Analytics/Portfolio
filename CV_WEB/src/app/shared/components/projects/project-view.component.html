@@ -7,6 +7,8 @@
   <!-- BARRA SUPERIOR (OVERLAY) -->
   <div class="
       absolute
+      inset-0
+      pointer-events-none
       top-0
       left-0
       w-full
@@ -20,33 +22,32 @@
     ">
 
     <a routerLink="/portfolio/programador" class="
-    flex
-    items-center
-    justify-center
-    h-10
-    w-10
+    fixed
+    bottom-6
+    right-6
+    pointer-events-auto
+    md:absolute
+    md:bottom-auto
+    md:top-3
+    md:right-6
+    flex items-center justify-center
+    h-6 w-6
+    sm:h-8 sm:w-8
+    md:h-10 md:w-10
     rounded-full
-    bg-white/90
-    hover:bg-white
+    bg-white/90 hover:bg-white
     text-black
-    shadow-lg
-    backdrop-blur
-    transition
-    duration-200
-    hover:scale-110
-    hover:shadow-xl
+    shadow-lg backdrop-blur
+    transition duration-200
+    hover:scale-110 hover:shadow-xl
     animate-[blink_1s_infinite]
   ">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:h-5 md:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 
       </svg>
     </a>
-
-    <span class="text-sm text-white/70">
-      Preview do Projeto
-    </span>
 
   </div>
 

@@ -40,7 +40,7 @@ function autoOpenDescription() {
 // ================= PREV =================
 prev.onclick = () => {
 
-    resetDescription() // 🔥 FECHA antes de trocar
+    resetDescription()
 
     list.style.setProperty('--calculation', 1)
 
@@ -58,14 +58,14 @@ prev.onclick = () => {
     item[active].classList.add('active')
     dot[active].classList.add('active')
 
-    autoOpenDescription() // 🔥 ABRE depois
+    autoOpenDescription()
 }
 
 
 // ================= NEXT =================
 next.onclick = () => {
 
-    resetDescription() // 🔥 FECHA antes de trocar
+    resetDescription()
 
     list.style.setProperty('--calculation', -1)
 
@@ -83,7 +83,7 @@ next.onclick = () => {
     item[active].classList.add('active')
     dot[active].classList.add('active')
 
-    autoOpenDescription() // 🔥 ABRE depois
+    autoOpenDescription()
 }
 
 
