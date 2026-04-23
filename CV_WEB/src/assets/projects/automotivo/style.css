@@ -64,7 +64,7 @@
     .menu-mobile-btn {
         position: absolute;
         top: 20px;
-        right: 30px;
+        right: 20px;
         width: 30px;
         height: 22px;
         z-index: 1001;
@@ -83,10 +83,14 @@
         }
 
         &.active span:nth-child(1) {
+            width: 70%;
+            background: rgb(240, 45, 45);
             transform: rotate(45deg) translateY(7px);
         }
-
+        
         &.active span:nth-child(2) {
+            width: 70%;
+            background: rgb(240, 45, 45);
             transform: rotate(-45deg) translateY(-7px);
         }
 
