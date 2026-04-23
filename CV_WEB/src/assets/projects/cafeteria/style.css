@@ -2,6 +2,7 @@
     --main-color: #d3ad7f;
     --black: #13131a;
     --white: #fff;
+    --silver: #353434;
     --bg: #010103;
     --border: 0.1rem solid rgba(255, 255, 255, 0.3);
     font-size: clamp(8px, 1vw, 10px);
@@ -193,6 +194,10 @@ img {
     padding: 0.5rem 0;
 }
 
+.menu .box-container .box:hover .price span {
+    color: var(--white);
+}
+
 .menu .box-container .box span {
     font-size: 1.5rem;
     text-decoration: line-through;
@@ -200,7 +205,7 @@ img {
 }
 
 .menu .box-container .box:hover {
-    background-color: var(--white);
+    background-color: var(--silver);
 }
 
 .menu .box-container .box:hover>* {
