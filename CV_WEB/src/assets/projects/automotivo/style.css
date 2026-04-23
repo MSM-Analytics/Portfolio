@@ -64,7 +64,7 @@
     .menu-mobile-btn {
         position: absolute;
         top: 20px;
-        right: 20px;
+        right: 30px;
         width: 30px;
         height: 22px;
         z-index: 1001;
@@ -311,7 +311,7 @@
                 top: var(--header-height);
                 right: 5px;
                 width: 25vw;
-                background: rgba(0, 0, 0, 0.65);
+                background: rgba(36, 9, 100, 0.55);
                 backdrop-filter: blur(25px) saturate(120%);
                 -webkit-backdrop-filter: blur(20px);
 
