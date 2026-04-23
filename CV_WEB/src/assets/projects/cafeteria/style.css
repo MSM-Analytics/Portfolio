@@ -264,6 +264,22 @@ img {
     width: 11rem;
 }
 
+.address {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 90%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.address iframe {
+    width: 90%;
+    height: 90%;
+    border: 0;
+}
+
 @media (max-width: 768px) {
 
     .about {
