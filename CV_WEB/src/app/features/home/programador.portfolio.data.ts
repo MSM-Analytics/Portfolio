@@ -7,7 +7,7 @@ export const PORTFOLIO_DATA_JS: DataPortfolioItem[] = [
     description: 'Landing page para loja de carros importados.',
     projectPath: 'automotivo',
     thumbnail: 'assets/images/site-automotivo.png',
-    tags: ['HTML', 'CSS', 'JS', 'Responsivo']
+    tags: ['HTML', 'SCSS', 'JS', 'Responsivo']
   },
 
   {
