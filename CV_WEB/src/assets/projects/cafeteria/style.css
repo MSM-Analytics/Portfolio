@@ -94,7 +94,9 @@ img {
 .home-container {
     background: url(./img/home-img.jpg);
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #000;
 }
 
 .home-container section {
@@ -146,12 +148,12 @@ img {
 }
 
 .about .row .content h3 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     color: var(--white);
 }
 
 .about .row .content p {
-    font-size: 1.6rem;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
     color: var(--white);
     padding: 1rem 0;
     line-height: 1.8;
@@ -257,4 +259,59 @@ img {
 .box-container .box:hover .cliente {
     height: 11rem;
     width: 11rem;
+}
+
+@media (max-width: 768px) {
+
+    .about {
+        padding-top: 6rem;
+    }
+
+    .about .row {
+        flex-direction: column;
+        background: none;
+        /* remove bloco pesado */
+        gap: 2rem;
+    }
+
+    .about .row .image {
+        width: 100%;
+        border-radius: 16px;
+        overflow: hidden;
+
+        /* efeito premium */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .about .row .image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .about .row .content {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+
+        border-radius: 16px;
+        padding: 2rem;
+        margin-top: -3rem;
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+        text-align: left;
+    }
+
+    .about .row .content h3 {
+        font-size: clamp(2.2rem, 6vw, 2.8rem);
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+    }
+
+    .about .row .content p {
+        font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+        line-height: 1.6;
+        opacity: 0.85;
+    }
+
 }
