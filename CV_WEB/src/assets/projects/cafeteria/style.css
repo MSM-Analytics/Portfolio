@@ -232,10 +232,6 @@ img {
     padding: 0.5rem 0;
 }
 
-.menu .box-container .box:hover .price span {
-    color: var(--white);
-}
-
 .menu .box-container .box span {
     font-size: 1.5rem;
     text-decoration: line-through;
@@ -243,7 +239,12 @@ img {
 }
 
 .menu .box-container .box:hover {
-    background-color: var(--silver);
+    background-color: var(--main-color);
+}
+
+.menu .box-container .box:hover .btn {
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .menu .box-container .box:hover>* {
