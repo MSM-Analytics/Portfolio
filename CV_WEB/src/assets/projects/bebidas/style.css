@@ -72,18 +72,28 @@ img {
     justify-content: center;
     top: 50%;
     transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: #eee9;
     border: 1px solid #eee9;
     border-radius: 50%;
-    color: #eee;
-    font-size: x-large;
-    font-family: monospace;
     padding: 0;
     line-height: 1;
+    stroke: #000;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
     cursor: pointer;
     z-index: 4;
+}
+
+#prev svg,
+#next svg {
+    width: 14px;
+    height: 14px;
+    stroke: #000;
+    stroke-width: 1.5;
 }
 
 #prev:hover,
@@ -123,7 +133,12 @@ img {
     #next {
         width: 25px;
         height: 25px;
-        font-size: 1rem;
+    }
+
+    #prev svg,
+    #next svg {
+        width: 10px;
+        height: 10px;
     }
 }
 
