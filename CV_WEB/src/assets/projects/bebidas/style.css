@@ -99,6 +99,7 @@ img {
 
     .item .title {
         font-size: clamp(3rem, 13vw, 5rem);
+        letter-spacing: 0.3rem;
         top: 64%;
     }
 
