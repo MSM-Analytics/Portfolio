@@ -107,8 +107,8 @@ img {
     }
 
     .item .refri {
-        width: 70vw;
-        top: 55%;
+        width: 100vw;
+        top: 40%;
     }
 
     #prev, #next {
