@@ -97,18 +97,18 @@ img {
 @media (max-width: 768px) {
 
     .item .title {
-        font-size: clamp(2.5rem, 12vw, 4rem);
+        font-size: clamp(3rem, 13vw, 5rem);
         top: 64%;
     }
 
     .item .fruit {
-        width: 100%;
+        width: 100vw;
         opacity: 0.9;
     }
 
     .item .refri {
         width: 100vw;
-        top: 40%;
+        top: 45%;
     }
 
     #prev, #next {
