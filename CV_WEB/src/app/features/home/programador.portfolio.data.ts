@@ -21,7 +21,7 @@ export const PORTFOLIO_DATA_JS: DataPortfolioItem[] = [
 
   {
     id: 'bebidas',
-    title: 'Site Bebidas',
+    title: 'slider Bebidas',
     description: 'Landing page promocional para marca de bebidas.',
     projectPath: 'bebidas',
     thumbnail: 'assets/images/site-bebidas.png',
