@@ -24,6 +24,7 @@ img {
     position: absolute;
     top: 0%;
     left: 0%;
+    overflow: hidden;
     background-color: var(--bg);
 }
 
@@ -107,6 +108,7 @@ img {
 
     .item .refri {
         width: 55%;
+        height: auto;
         top: 55%;
     }
 
