@@ -56,7 +56,7 @@ img {
 
 .item .refri {
     position: absolute;
-    width: clamp(180px, 60vw, 600px);
+    width: clamp(300px, 60vw, 600px);
     left: 50%;
     top: 55%;
     transform: translate(-50%, -50%);
