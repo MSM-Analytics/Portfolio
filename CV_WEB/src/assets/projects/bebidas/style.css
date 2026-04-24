@@ -56,7 +56,7 @@ img {
 
 .item .refri {
     position: absolute;
-    width: clamp(180px, 40vw, 600px);
+    width: clamp(300px, 40vw, 600px);
     left: 50%;
     top: 55%;
     transform: translate(-50%, -50%);
@@ -98,7 +98,7 @@ img {
 
     .item .title {
         font-size: clamp(2.5rem, 12vw, 4rem);
-        top: 66.5%;
+        top: 64%;
     }
 
     .item .fruit {
@@ -112,9 +112,9 @@ img {
     }
 
     #prev, #next {
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
     }
 }
 
