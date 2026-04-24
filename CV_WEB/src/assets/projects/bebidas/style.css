@@ -64,19 +64,25 @@ img {
     z-index: 1;
 }
 
-#prev, #next {
+#prev,
+#next {
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     top: 50%;
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
     background-color: #eee9;
     border: 1px solid #eee9;
+    border-radius: 50%;
     color: #eee;
     font-size: x-large;
     font-family: monospace;
+    padding: 0;
+    line-height: 1;
     cursor: pointer;
-    border-radius: 50%;
     z-index: 4;
 }
 
@@ -113,7 +119,8 @@ img {
         top: 45%;
     }
 
-    #prev, #next {
+    #prev,
+    #next {
         width: 25px;
         height: 25px;
         font-size: 1rem;
@@ -121,7 +128,7 @@ img {
 }
 
 @keyframes toActive {
-    from{
+    from {
         top: 100%;
         opacity: 0;
     }
