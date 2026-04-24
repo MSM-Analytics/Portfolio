@@ -324,6 +324,59 @@ img {
     border: 0;
 }
 
+.cart {
+    position: fixed;
+    top: 80px;
+    right: -350px;
+    width: 300px;
+    background: #111;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    transition: 0.4s ease;
+    z-index: 999;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    right: 20px;
+}
+
+.cart.active {
+    right: 20px;
+}
+
+.cart-item button {
+    background: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.cart-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: auto;
+    bottom: 10%;
+    right: 5%;
+    background: red;
+    color: white;
+    font-size: 1.2rem;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
 
     .menu-toggle {

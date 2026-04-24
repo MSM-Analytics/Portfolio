@@ -27,19 +27,17 @@
                 <a href="#address">Endereço</a>
             </nav>
             <div class="icons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-search-icon lucide-search">
-                    <path d="m21 21-4.34-4.34" />
-                    <circle cx="11" cy="11" r="8" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="lucide lucide-shopping-cart-icon lucide-shopping-cart">
-                    <circle cx="8" cy="21" r="1" />
-                    <circle cx="19" cy="21" r="1" />
-                    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-                </svg>
+                <div class="cart-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-shopping-cart cart-icon">
+                        <circle cx="8" cy="21" r="1" />
+                        <circle cx="19" cy="21" r="1" />
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                    </svg>
+
+                    <span class="cart-count">0</span>
+                </div>
             </div>
 
             <div class="menu-toggle">
@@ -49,6 +47,13 @@
             </div>
         </section>
     </header>
+
+    <div class="cart">
+        <h2>Carrinho</h2>
+        <div class="cart-items"></div>
+        <div class="cart-total">Total: R$ 0,00</div>
+    </div>
+
     <div class="home-container">
         <section id="home">
             <div class="content">
@@ -88,37 +93,49 @@
                 <img src="./img/menu-1.png" alt="item-1">
                 <h3>café coado</h3>
                 <div class="price">R$ 15,99 <span>20,99</span></div>
-                <a href="#" class="btn">adicione ao carrinho</a>
+                <a href="" class="btn add-to-cart" data-name="café coado" data-price="15.99">
+                    adicionar ao carrinho
+                </a>
             </div>
             <div class="box">
                 <img src="./img/menu-2.png" alt="item-2">
-                <h3>café coado</h3>
+                <h3>café expresso</h3>
                 <div class="price">R$ 15,99 <span>20,99</span></div>
-                <a href="#" class="btn">adicione ao carrinho</a>
+                <a href="" class="btn add-to-cart" data-name="café expresso" data-price="15.99">
+                    adicione ao carrinho
+                </a>
             </div>
             <div class="box">
                 <img src="./img/menu-3.png" alt="item-3">
-                <h3>café coado</h3>
+                <h3>Capoccino</h3>
                 <div class="price">R$ 13,99 <span>18,99</span></div>
-                <a href="#" class="btn">adicione ao carrinho</a>
+                <a href="" class="btn add-to-cart" data-name="Capoccino" data-price="13.99">
+                    adicione ao carrinho
+                </a>
             </div>
             <div class="box">
                 <img src="./img/menu-4.png" alt="item-4">
-                <h3>café coado</h3>
+                <h3>café com leite</h3>
                 <div class="price">R$ 11,99 <span>12,99</span></div>
-                <a href="#" class="btn">adicione ao carrinho</a>
+                <a href="" class="btn add-to-cart" data-name="café com leite" data-price="11.99">
+                    adicione ao carrinho
+                </a>
             </div>
             <div class="box">
                 <img src="./img/menu-5.png" alt="item-5">
-                <h3>café coado</h3>
+                <h3>café curto</h3>
                 <div class="price">R$ 8,99 <span>13,99</span></div>
-                <a href="#" class="btn">adicione ao carrinho</a>
+                <a href="" class="btn add-to-cart" data-name="café curto" data-price="8.99">
+                    adicione ao carrinho
+                </a>
             </div>
             <div class="box">
                 <img src="./img/menu-6.png" alt="item-6">
-                <h3>café coado</h3>
+                <h3>café médio</h3>
                 <div class="price">R$ 11,20 <span>15,99</span></div>
-                <a href="#" class="btn">adicione ao carrinho</a>
+                <a href="" class="btn add-to-cart" data-name="café médio" data-price="8.99">
+                    adicione ao carrinho
+                </a>
             </div>
         </div>
     </section>
@@ -273,6 +290,7 @@
 
 </body>
 
-<script src="./script.js"></script>
+<script src="./script.js" defer></script>
+<script src="./carrinho.js" defer></script>
 
 </html>
