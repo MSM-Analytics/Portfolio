@@ -73,6 +73,8 @@ document.addEventListener('click', (e) => {
 if (cartIcon) {
     cartIcon.addEventListener('click', () => {
         cartBox.classList.toggle('active');
+
+        document.body.classList.toggle('no-scroll');
     });
 }
 
@@ -149,5 +151,41 @@ if (checkoutBtn) {
         // - Checkout próprio
     });
 }
+
+let startY = 0;
+let currentY = 0;
+let isDragging = false;
+
+cartBox.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+    isDragging = true;
+});
+
+cartBox.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+
+    currentY = e.touches[0].clientY;
+    const diff = currentY - startY;
+
+    // só permite arrastar pra baixo
+    if (diff > 0) {
+        cartBox.style.transform = `translateY(${diff}px)`;
+    }
+});
+
+cartBox.addEventListener('touchend', () => {
+    isDragging = false;
+
+    const diff = currentY - startY;
+
+    // 🔥 se arrastar o suficiente, fecha
+    if (diff > 120) {
+        cartBox.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    }
+
+    // volta pro lugar
+    cartBox.style.transform = 'translateY(0)';
+});
 
 updateCart();
