@@ -745,12 +745,11 @@ img {
         align-items: center;
 
         transition: bottom 0.4s ease;
-        touch-action: none;
     }
 
     /* quando abre */
     .cart.active {
-        bottom: 5rem;
+        bottom: 7rem;
     }
 
     /* barra de arrastar (detalhe premium) */

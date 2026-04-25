@@ -174,17 +174,18 @@ cartBox.addEventListener('touchmove', (e) => {
     }
 }, { passive: false }); // 🔥 ESSENCIAL
 
-cartBox.addEventListener('touchend', () => {
-    isDragging = false;
+cartBox.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
 
+    currentY = e.touches[0].clientY;
     const diff = currentY - startY;
 
-    if (diff > 120) {
-        cartBox.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-    }
+    // 🔥 só bloqueia quando estiver realmente arrastando o carrinho
+    if (diff > 0 && cartBox.classList.contains('active')) {
+        e.preventDefault();
 
-    cartBox.style.transform = 'translateY(0)';
-});
+        cartBox.style.transform = `translateY(${diff}px)`;
+    }
+}, { passive: false });
 
 updateCart();
