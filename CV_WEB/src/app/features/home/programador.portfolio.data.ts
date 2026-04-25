@@ -13,7 +13,7 @@ export const PORTFOLIO_DATA_JS: DataPortfolioItem[] = [
   {
     id: 'cafeteria',
     title: 'Site Cafeteria',
-    description: 'Website institucional com menu para um ciber café.',
+    description: 'E commerce institucional com menu para um ciber café.',
     projectPath: 'cafeteria',
     thumbnail: 'assets/images/site-cafeteria.png',
     tags: ['E commerce', 'HTML', 'CSS', 'JS', 'Responsivo', 'Carrinho de compras']
@@ -22,7 +22,7 @@ export const PORTFOLIO_DATA_JS: DataPortfolioItem[] = [
   {
     id: 'bebidas',
     title: 'Slider Bebidas',
-    description: 'Landing page promocional para marca de bebidas.',
+    description: 'Carrocel slider promocional para marca de bebidas.',
     projectPath: 'bebidas',
     thumbnail: 'assets/images/site-bebidas.png',
     tags: ['Landing Page', 'HTML', 'CSS', 'JS', 'Responsivo']
