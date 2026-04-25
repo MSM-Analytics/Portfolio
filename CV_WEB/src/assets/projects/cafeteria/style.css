@@ -20,7 +20,7 @@
 }
 
 html {
-    overscroll-behavior: contain;
+    overscroll-behavior-y: auto;
 }
 
 body {

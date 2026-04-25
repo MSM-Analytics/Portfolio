@@ -70,13 +70,15 @@ document.addEventListener('click', (e) => {
 });
 
 // Abrir/fechar carrinho
-if (cartIcon) {
-    cartIcon.addEventListener('click', () => {
-        cartBox.classList.toggle('active');
+cartIcon.addEventListener('click', () => {
+    cartBox.classList.toggle('active');
 
-        document.body.classList.toggle('no-scroll');
-    });
-}
+    if (cartBox.classList.contains('active')) {
+        document.body.classList.add('no-scroll');
+    } else {
+        document.body.classList.remove('no-scroll');
+    }
+});
 
 // Item voando parao carrinho
 
@@ -178,12 +180,6 @@ cartBox.addEventListener('touchmove', (e) => {
     if (diff > 0) {
         e.preventDefault();
         cartBox.style.transform = `translateY(${diff}px)`;
-    }
-}, { passive: false });
-
-document.addEventListener('touchmove', (e) => {
-    if (document.body.classList.contains('no-scroll')) {
-        e.preventDefault();
     }
 }, { passive: false });
 
