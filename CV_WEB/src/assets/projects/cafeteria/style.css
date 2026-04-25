@@ -19,6 +19,10 @@
     font-family: "Roboto", sans-serif;
 }
 
+html {
+    overscroll-behavior: none;
+}
+
 body {
     background-color: var(--bg);
 }
@@ -26,6 +30,7 @@ body {
 body.no-scroll {
     overflow: hidden;
     height: 100vh;
+    overscroll-behavior: none;
 }
 
 section {

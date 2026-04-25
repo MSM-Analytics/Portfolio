@@ -159,7 +159,7 @@ let isDragging = false;
 cartBox.addEventListener('touchstart', (e) => {
     startY = e.touches[0].clientY;
     isDragging = true;
-});
+}, { passive: true });
 
 cartBox.addEventListener('touchmove', (e) => {
     if (!isDragging) return;
@@ -167,24 +167,23 @@ cartBox.addEventListener('touchmove', (e) => {
     currentY = e.touches[0].clientY;
     const diff = currentY - startY;
 
-    // só permite arrastar pra baixo
     if (diff > 0) {
+        e.preventDefault(); // 🔥 BLOQUEIA SCROLL DO BODY
+
         cartBox.style.transform = `translateY(${diff}px)`;
     }
-});
+}, { passive: false }); // 🔥 ESSENCIAL
 
 cartBox.addEventListener('touchend', () => {
     isDragging = false;
 
     const diff = currentY - startY;
 
-    // 🔥 se arrastar o suficiente, fecha
     if (diff > 120) {
         cartBox.classList.remove('active');
         document.body.classList.remove('no-scroll');
     }
 
-    // volta pro lugar
     cartBox.style.transform = 'translateY(0)';
 });
 
