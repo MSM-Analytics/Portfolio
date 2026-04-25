@@ -153,39 +153,45 @@ if (checkoutBtn) {
 }
 
 let startY = 0;
-let currentY = 0;
+let diff = 0;
 let isDragging = false;
+
+const CLOSE_THRESHOLD = 120;
 
 cartBox.addEventListener('touchstart', (e) => {
     startY = e.touches[0].clientY;
     isDragging = true;
+
+    cartBox.style.transition = 'none';
 }, { passive: true });
 
 cartBox.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
+    if (!isDragging || !cartBox.classList.contains('active')) return;
 
-    currentY = e.touches[0].clientY;
-    const diff = currentY - startY;
+    const currentY = e.touches[0].clientY;
+    diff = currentY - startY;
 
     if (diff > 0) {
-        e.preventDefault(); // 🔥 BLOQUEIA SCROLL DO BODY
-
-        cartBox.style.transform = `translateY(${diff}px)`;
-    }
-}, { passive: false }); // 🔥 ESSENCIAL
-
-cartBox.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-
-    currentY = e.touches[0].clientY;
-    const diff = currentY - startY;
-
-    // 🔥 só bloqueia quando estiver realmente arrastando o carrinho
-    if (diff > 0 && cartBox.classList.contains('active')) {
         e.preventDefault();
-
         cartBox.style.transform = `translateY(${diff}px)`;
     }
 }, { passive: false });
+
+cartBox.addEventListener('touchend', () => {
+    if (!isDragging) return;
+
+    isDragging = false;
+    cartBox.style.transition = 'bottom 0.4s ease, transform 0.3s ease';
+
+    // 🔥 FECHA SE ARRASTOU O SUFICIENTE
+    if (diff > CLOSE_THRESHOLD) {
+        cartBox.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    }
+
+    // reset visual
+    cartBox.style.transform = 'translateY(0px)';
+    diff = 0;
+});
 
 updateCart();
