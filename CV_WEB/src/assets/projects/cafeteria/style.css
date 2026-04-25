@@ -750,7 +750,7 @@ img {
 
     /* quando abre */
     .cart.active {
-        bottom: 0;
+        bottom: 5rem;
     }
 
     /* barra de arrastar (detalhe premium) */
