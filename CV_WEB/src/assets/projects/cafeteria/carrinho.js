@@ -171,9 +171,19 @@ cartBox.addEventListener('touchmove', (e) => {
     const currentY = e.touches[0].clientY;
     diff = currentY - startY;
 
+    if (diff > 10) {
+        document.body.classList.add('no-scroll');
+    }
+
     if (diff > 0) {
         e.preventDefault();
         cartBox.style.transform = `translateY(${diff}px)`;
+    }
+}, { passive: false });
+
+document.addEventListener('touchmove', (e) => {
+    if (document.body.classList.contains('no-scroll')) {
+        e.preventDefault();
     }
 }, { passive: false });
 
@@ -181,16 +191,16 @@ cartBox.addEventListener('touchend', () => {
     if (!isDragging) return;
 
     isDragging = false;
+
+    document.body.classList.remove('no-scroll');
+
     cartBox.style.transition = 'bottom 0.4s ease, transform 0.3s ease';
 
-    // 🔥 FECHA SE ARRASTOU O SUFICIENTE
     if (diff > CLOSE_THRESHOLD) {
         cartBox.classList.remove('active');
-        document.body.classList.remove('no-scroll');
     }
 
-    // reset visual
-    cartBox.style.transform = 'translateY(0px)';
+    cartBox.style.transform = 'translateY(0)';
     diff = 0;
 });
 
