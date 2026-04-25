@@ -717,7 +717,7 @@ img {
         right: 0;
         left: 0;
 
-        width: full;
+        width: 100vw;
         height: 80vh;
 
         border-radius: 10px 10px 0 0;
