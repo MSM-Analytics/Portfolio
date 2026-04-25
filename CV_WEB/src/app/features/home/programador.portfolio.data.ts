@@ -16,7 +16,7 @@ export const PORTFOLIO_DATA_JS: DataPortfolioItem[] = [
     description: 'Website institucional com menu para um ciber café.',
     projectPath: 'cafeteria',
     thumbnail: 'assets/images/site-cafeteria.png',
-    tags: ['HTML', 'CSS', 'JS', 'Responsivo']
+    tags: ['E commerce', 'HTML', 'CSS', 'JS', 'Responsivo', 'carrinho de compra']
   },
 
   {
