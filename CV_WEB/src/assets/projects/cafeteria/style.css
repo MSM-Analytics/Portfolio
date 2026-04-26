@@ -520,7 +520,9 @@ img {
     cursor: not-allowed;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -749,7 +751,7 @@ img {
 
     /* quando abre */
     .cart.active {
-        bottom: 7rem;
+        bottom: 0;
     }
 
     /* barra de arrastar (detalhe premium) */
@@ -825,6 +827,14 @@ img {
     .cart-total {
         text-align: center;
         font-size: 1.8rem;
+    }
+
+    .payment {
+        display: flex;
+        width: 90vw;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5rem;
     }
 
     /* botão sempre visível */
