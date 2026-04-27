@@ -168,11 +168,14 @@ cartBox.addEventListener('touchstart', (e) => {
 
 cartBox.addEventListener('touchmove', (e) => {
     if (!isDragging || !cartBox.classList.contains('active')) return;
+
     const diff = e.touches[0].clientY - touchStartY;
-    if (diff > 0) {
+
+    if (diff > 0 && cartContainer.scrollTop === 0) {
         cartBox.style.transform = `translateY(${diff}px)`;
+        e.preventDefault();
     }
-}, { passive: true });
+}, { passive: false });
 
 cartBox.addEventListener('touchend', (e) => {
     if (!isDragging) return;

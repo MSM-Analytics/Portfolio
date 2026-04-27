@@ -28,11 +28,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
-}
-
-html .cart.active {
-    overscroll-behavior-y: none;
+    scroll-behavior: contain;
 }
 
 body {
