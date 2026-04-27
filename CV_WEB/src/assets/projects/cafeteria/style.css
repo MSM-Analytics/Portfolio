@@ -1241,4 +1241,7 @@ section {
         grid-template-columns: 1fr;
         gap: 1px;
     }
+    .footer{
+        margin-bottom: 4rem;
+    }
 }
