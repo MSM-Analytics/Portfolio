@@ -1241,6 +1241,6 @@ section {
         gap: 1px;
     }
     .footer{
-        margin-bottom: 5rem;
+        padding-bottom: 5rem;
     }
 }
