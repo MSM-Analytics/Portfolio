@@ -300,7 +300,7 @@ body::before {
 .home-container {
     position: relative;
     min-height: 100vh;
-    background: url('./img/home-img.jpg') center/cover no-repeat;
+    background: url('./img/home-img.jpg') center/contain no-repeat;
     display: flex;
     align-items: center;
 }
