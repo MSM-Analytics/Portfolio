@@ -1,27 +1,26 @@
 let cart = [];
 
-// Elementos principais
-const buttons = document.querySelectorAll('.add-to-cart');
-const cartBox = document.querySelector('.cart');
+const cartBox = document.getElementById('cart');
 const cartIcon = document.querySelector('.cart-icon');
-
+const cartWrapper = document.getElementById('cartWrapper');
 const cartContainer = document.querySelector('.cart-items');
-const totalElement = document.querySelector('.cart-total');
+const totalSpan = document.querySelector('.cart-total span');
 const countElement = document.querySelector('.cart-count');
 const checkoutBtn = document.querySelector('.checkout-btn');
+const buttons = document.querySelectorAll('.add-to-cart');
 
+// ─── ADD TO CART ──────────────────────────────────────────────
 function addToCart(name, price) {
     const existing = cart.find(item => item.name === name);
-
     if (existing) {
         existing.quantity++;
     } else {
         cart.push({ name, price, quantity: 1 });
     }
-
     updateCart();
 }
 
+// ─── UPDATE CART ──────────────────────────────────────────────
 function updateCart() {
     cartContainer.innerHTML = '';
 
@@ -34,170 +33,159 @@ function updateCart() {
 
         const div = document.createElement('div');
         div.classList.add('cart-item');
-
-        // 🔥 animação só quando cria
-        div.classList.add('item-enter');
-
         div.innerHTML = `
             <span>${item.name}</span>
-            <span>${item.quantity}x</span>
+            <span>${item.quantity}×</span>
             <span>R$ ${(item.price * item.quantity).toFixed(2)}</span>
-            <button class="remove-item" data-index="${index}">❌</button>
+            <button class="remove-item" data-index="${index}" aria-label="Remover">✕</button>
         `;
-
         cartContainer.appendChild(div);
     });
 
-    totalElement.innerText = `Total: R$ ${total.toFixed(2)}`;
-    countElement.innerText = totalItems;
-
-    if (checkoutBtn) {
-        checkoutBtn.disabled = cart.length === 0;
+    if (totalSpan) totalSpan.textContent = total.toFixed(2).replace('.', ',');
+    if (countElement) {
+        countElement.textContent = totalItems;
+        // Pulse count badge
+        countElement.classList.add('bump');
+        setTimeout(() => countElement.classList.remove('bump'), 300);
     }
+
+    if (checkoutBtn) checkoutBtn.disabled = cart.length === 0;
 }
 
-// Remover item
-function removeItem(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
+// ─── REMOVE ITEM ──────────────────────────────────────────────
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove-item')) {
-        const index = e.target.dataset.index;
-        removeItem(index);
+        const index = parseInt(e.target.dataset.index);
+        const item = e.target.closest('.cart-item');
+        if (item) {
+            item.style.transform = 'translateX(20px)';
+            item.style.opacity = '0';
+            item.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                cart.splice(index, 1);
+                updateCart();
+            }, 280);
+        }
     }
 });
 
-// Abrir/fechar carrinho
-cartIcon.addEventListener('click', () => {
-    cartBox.classList.toggle('active');
-
-    if (cartBox.classList.contains('active')) {
-        document.body.classList.add('no-scroll');
-    } else {
-        document.body.classList.remove('no-scroll');
-    }
-});
-
-// Item voando parao carrinho
-
-function flyToCart(imgElement) {
-
-    const imgRect = imgElement.getBoundingClientRect();
-    const cartRect = cartIcon.getBoundingClientRect();
-    const clone = imgElement.cloneNode(true);
-
-    clone.style.position = 'fixed';
-    clone.style.top = imgRect.top + 'px';
-    clone.style.left = imgRect.left + 'px';
-    clone.style.width = imgRect.width + 'px';
-    clone.style.height = imgRect.height + 'px';
-    clone.style.zIndex = 9999;
-    clone.style.pointerEvents = 'none';
-    clone.style.transition = 'all 0.8s cubic-bezier(.65,-0.55,.25,1.55)';
-    clone.style.borderRadius = '50%';
-
-    document.body.appendChild(clone);
-
-    // força render antes da animação
-    clone.getBoundingClientRect();
-
-    // 🔥 anima até o carrinho
-    clone.style.top = cartRect.top + 'px';
-    clone.style.left = cartRect.left + 'px';
-    clone.style.width = '20px';
-    clone.style.height = '20px';
-    clone.style.opacity = '0.5';
-
-    // 🔥 efeito bump no carrinho
-    cartIcon.classList.add('bump');
-    setTimeout(() => {
-        cartIcon.classList.remove('bump');
-    }, 300);
-
-    // remove o clone após animação
-    setTimeout(() => {
-        clone.remove();
-    }, 800);
+// ─── OPEN / CLOSE CART ────────────────────────────────────────
+if (cartWrapper) {
+    cartWrapper.addEventListener('click', () => {
+        cartBox.classList.toggle('active');
+        document.body.style.overflow = cartBox.classList.contains('active') ? 'hidden' : '';
+    });
 }
 
+// Close when clicking outside
+document.addEventListener('click', (e) => {
+    if (cartBox.classList.contains('active') &&
+        !cartBox.contains(e.target) &&
+        !cartWrapper.contains(e.target)) {
+        cartBox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// ─── FLY TO CART ANIMATION ────────────────────────────────────
+function flyToCart(imgElement) {
+    const cartIconEl = document.querySelector('.cart-icon');
+    if (!cartIconEl || !imgElement) return;
+
+    const imgRect = imgElement.getBoundingClientRect();
+    const cartRect = cartIconEl.getBoundingClientRect();
+
+    const clone = document.createElement('div');
+    clone.style.cssText = `
+        position: fixed;
+        top: ${imgRect.top + imgRect.height / 2}px;
+        left: ${imgRect.left + imgRect.width / 2}px;
+        width: 12px;
+        height: 12px;
+        background: var(--gold, #c9a96e);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%) scale(3);
+        transition: all 0.7s cubic-bezier(0.55, 0, 0.3, 1);
+        opacity: 1;
+    `;
+    document.body.appendChild(clone);
+
+    // Force reflow
+    clone.getBoundingClientRect();
+
+    // Animate to cart
+    clone.style.top = (cartRect.top + cartRect.height / 2) + 'px';
+    clone.style.left = (cartRect.left + cartRect.width / 2) + 'px';
+    clone.style.transform = 'translate(-50%, -50%) scale(0.5)';
+    clone.style.opacity = '0';
+
+    // Bump cart icon
+    cartIconEl.classList.add('bump');
+    setTimeout(() => cartIconEl.classList.remove('bump'), 400);
+
+    setTimeout(() => clone.remove(), 750);
+}
+
+// ─── ADD TO CART CLICK HANDLER ────────────────────────────────
 buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.preventDefault();
 
         const name = btn.dataset.name;
         const price = parseFloat(btn.dataset.price);
-
         const box = btn.closest('.box');
-        const img = box.querySelector('img');
+        const img = box ? box.querySelector('img') : null;
 
-        flyToCart(img); // 🔥 AQUI
+        // Button feedback
+        btn.style.transform = 'scale(0.95)';
+        setTimeout(() => btn.style.transform = '', 200);
 
+        flyToCart(img);
         addToCart(name, price);
     });
 });
 
+// ─── CHECKOUT BUTTON ──────────────────────────────────────────
 if (checkoutBtn) {
     checkoutBtn.addEventListener('click', () => {
-        if (cart.length === 0) {
-            alert('Seu carrinho está vazio!');
-            return;
-        }
-
+        if (cart.length === 0) return;
         alert('Redirecionando para pagamento...');
-
-        // integrar depois:
-        // - Stripe
-        // - Mercado Pago
-        // - Checkout próprio
     });
 }
 
-let startY = 0;
-let diff = 0;
+// ─── SWIPE DOWN TO CLOSE (MOBILE) ────────────────────────────
+let touchStartY = 0;
 let isDragging = false;
 
-const CLOSE_THRESHOLD = 120;
-
 cartBox.addEventListener('touchstart', (e) => {
-    startY = e.touches[0].clientY;
+    touchStartY = e.touches[0].clientY;
     isDragging = true;
-
     cartBox.style.transition = 'none';
 }, { passive: true });
 
 cartBox.addEventListener('touchmove', (e) => {
     if (!isDragging || !cartBox.classList.contains('active')) return;
-
-    const currentY = e.touches[0].clientY;
-    diff = currentY - startY;
-
-    if (diff > 10) {
-        document.body.classList.add('no-scroll');
-    }
-
+    const diff = e.touches[0].clientY - touchStartY;
     if (diff > 0) {
-        e.preventDefault();
         cartBox.style.transform = `translateY(${diff}px)`;
     }
-}, { passive: false });
+}, { passive: true });
 
-cartBox.addEventListener('touchend', () => {
+cartBox.addEventListener('touchend', (e) => {
     if (!isDragging) return;
-
     isDragging = false;
+    const diff = e.changedTouches[0].clientY - touchStartY;
+    cartBox.style.transition = '';
+    cartBox.style.transform = '';
 
-    document.body.classList.remove('no-scroll');
-
-    cartBox.style.transition = 'bottom 0.4s ease, transform 0.3s ease';
-
-    if (diff > CLOSE_THRESHOLD) {
+    if (diff > 100) {
         cartBox.classList.remove('active');
+        document.body.style.overflow = '';
     }
-
-    cartBox.style.transform = 'translateY(0)';
-    diff = 0;
 });
 
+// ─── INIT ─────────────────────────────────────────────────────
 updateCart();
