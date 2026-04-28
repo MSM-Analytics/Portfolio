@@ -207,7 +207,7 @@ if (isTouch) {
         });
     }, {
         root: null,
-        rootMargin: '-50% 0px -50% 0px',
+        rootMargin: '-30% 0px -70% 0px',
         threshold: [0, 0.01]
     });
 
