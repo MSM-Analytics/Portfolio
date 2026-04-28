@@ -1094,6 +1094,62 @@ section {
     will-change: transform;
 }
 
+/* ─── TOUCH HOVER (mobile/tablet via JS) ─────────────────── */
+@media (hover: none), (pointer: coarse) {
+
+    /* HERO BTN */
+    .btn.hovered::before {
+        transform: scaleX(1);
+    }
+    .btn.hovered {
+        color: var(--black);
+    }
+    .btn.hovered .btn-arrow {
+        transform: translateX(5px);
+    }
+
+    /* ABOUT BTN */
+    .btn-secondary.hovered::before {
+        transform: scaleX(1);
+    }
+    .btn-secondary.hovered {
+        color: var(--black);
+    }
+
+    /* MENU BOX */
+    .menu .box-container .box.hovered::before {
+        opacity: 1;
+    }
+    .menu .box-container .box.hovered img {
+        transform: translateY(-8px) scale(1.08);
+        filter: drop-shadow(0 20px 30px rgba(201, 169, 110, 0.3));
+    }
+    .menu .box-container .box.hovered .btn::before {
+        transform: scaleX(1);
+    }
+    .menu .box-container .box.hovered .btn {
+        color: var(--black);
+        border-color: var(--gold);
+    }
+    .menu .box-container .box.hovered .btn span {
+        color: var(--black);
+    }
+
+    /* REVIEW BOX */
+    .review .box-container .box.hovered {
+        transform: translateY(-6px);
+        border-color: var(--border-gold);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    }
+    .review .box-container .box.hovered::after {
+        transform: scaleX(1);
+    }
+    .review .box-container .box.hovered .cliente {
+        border-color: var(--gold);
+        transform: scale(1.05);
+    }
+}
+
 /* ─── MOBILE ──────────────────────────────────────────── */
 @media (max-width: 768px) {
     body {

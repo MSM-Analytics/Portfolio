@@ -189,3 +189,29 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         }
     });
 });
+
+// ─── TOUCH HOVER EFFECTS (MOBILE/TABLET) ──────────────────────
+const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+if (isTouch) {
+    console.log('isTouch:', isTouch);
+    const touchHoverObserver = new IntersectionObserver((entries) => {
+        console.log('intersecting:', entry.target, entry.isIntersecting);
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('hovered');
+            }             
+            if (entry.intersectionRatio === 0) {
+                entry.target.classList.remove('hovered');
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: [0, 0.01]
+    });
+
+    document.querySelectorAll(
+        '.menu .box-container .box, .review .box-container .box, .btn'
+    ).forEach(el => touchHoverObserver.observe(el));
+}
