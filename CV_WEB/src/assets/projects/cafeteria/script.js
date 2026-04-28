@@ -194,9 +194,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
 if (isTouch) {
-    console.log('isTouch:', isTouch);
     const touchHoverObserver = new IntersectionObserver((entries) => {
-        console.log('intersecting:', entry.target, entry.isIntersecting);
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('hovered');
@@ -207,8 +205,8 @@ if (isTouch) {
         });
     }, {
         root: null,
-        rootMargin: '-30% 0px -70% 0px',
-        threshold: [0, 0.01]
+        rootMargin: '-50% 0px -40% 0px',
+        threshold: 0
     });
 
     document.querySelectorAll(
