@@ -5,10 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        'notebook': {'raw': '(min-width: 1024px) and (orientation: landscape)'},
-        'tablet': { 'raw': '(min-width: 1024px) and (orientation: portrait)' },
-      },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
