@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'notebook': {'raw': '(min-width: 1024px) and (orientation: landscape)'},
+        'tablet': { 'raw': '(min-width: 1024px) and (orientation: portrait)' },
+      },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
@@ -44,12 +48,12 @@ module.exports = {
           transform: 'scale(1)',
         },
       },
-    animation: {
-      fadeUp: 'fadeUp 0.8s ease-out forwards',
-      fadeDown: 'fadeDown 0.8s ease-out forwards',
-      zoomIn: 'zoomIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+      animation: {
+        fadeUp: 'fadeUp 0.8s ease-out forwards',
+        fadeDown: 'fadeDown 0.8s ease-out forwards',
+        zoomIn: 'zoomIn 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+      },
     },
   },
-},
   plugins: [],
 }
