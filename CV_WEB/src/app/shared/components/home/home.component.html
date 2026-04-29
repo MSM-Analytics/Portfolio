@@ -6,11 +6,17 @@ md:min-h-screen md:pt-0 md:pb-0
   <img src="assets/images/bg-dados.png" class="absolute inset-0 w-full h-full object-cover" />
 
   <!-- BG Content-->
-  <div class="hidden md:block absolute inset-0 ml-7 animate-reveal-left">
+  <div class="hidden absolute inset-0 ml-7 animate-reveal-left
+  md:block md:top-[10%]
+  lg:top-0  
+  ">
     <img src="assets/images/img-left.png" alt="left" />
   </div>
 
-  <div class="hidden md:block absolute bottom-0 right-0 mr-7 animate-reveal-right">
+  <div class="hidden absolute bottom-0 right-0 mr-7 animate-reveal-right
+  md:block md:bottom-auto md:top-[10%]
+  lg:bottom-0 lg:top-auto
+  ">
     <img src="assets/images/img-right.png" alt="right" />
   </div>
 
@@ -114,7 +120,7 @@ md:min-h-screen md:pt-0 md:pb-0
 
     /*Noteboon*/
     md:absolute md:max-w-[320px] md:left-4 md:top-10
-    lg:max-w-[450px] lg:left-8 lg:top-16 lg:mt-1">
+    lg:max-w-[450px] lg:left-8 lg:top-14 lg:mt-1">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
       </app-cards>
@@ -127,7 +133,7 @@ md:min-h-screen md:pt-0 md:pb-0
 
     /*Noteboon*/
     md:absolute md:max-w-[320px] md:right-4 md:bottom-10 md:text-right
-    lg:max-w-[450px] lg:right-8 lg:bottom-18
+    lg:max-w-[450px] lg:right-8 lg:bottom-16
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
