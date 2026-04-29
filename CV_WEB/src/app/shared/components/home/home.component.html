@@ -10,7 +10,10 @@ md:min-h-screen md:pt-0 md:pb-0
     <img src="assets/images/img-left.png" alt="left" />
   </div>
 
-  <div class="hidden md:block absolute bottom-0 right-5 mr-7 animate-reveal-right">
+  <div class="hidden mr-10 animate-reveal-right
+    lg:block
+    tablet:relative tablet:-translate-y-[10%]
+    notebook:absolute notebook:bottom-0 notebook:right-0">
     <img src="assets/images/img-right.png" alt="right" />
   </div>
 
@@ -127,7 +130,6 @@ md:min-h-screen md:pt-0 md:pb-0
 
     /*Noteboon*/
     md:absolute md:max-w-[320px] md:right-4 md:bottom-10 md:text-right
-    tablet:relative tablet:bottom-[30%]
     lg:max-w-[450px] lg:right-12 lg:bottom-16
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
