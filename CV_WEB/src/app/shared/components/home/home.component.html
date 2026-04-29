@@ -6,19 +6,20 @@ md:min-h-screen md:pt-0 md:pb-0
   <img src="assets/images/bg-dados.png" class="absolute inset-0 w-full h-full object-cover" />
 
   <!-- BG Content-->
-   <div class="hidden md:block absolute inset-0 ml-7 animate-reveal-left">
-     <img src="assets/images/img-left.png" alt="left"/>
-   </div>
+  <div class="hidden md:block absolute inset-0 ml-7 animate-reveal-left">
+    <img src="assets/images/img-left.png" alt="left" />
+  </div>
 
-   <div class="hidden md:block absolute bottom-0 right-0 mr-7 animate-reveal-right">
-     <img src="assets/images/img-right.png" alt="right"/>
-   </div>
+  <div class="hidden md:block absolute bottom-0 right-0 mr-7 animate-reveal-right">
+    <img src="assets/images/img-right.png" alt="right" />
+  </div>
 
   <!-- CONTEÚDO CENTRAL -->
   <div class="
   relative z-10 flex flex-col items-center justify-start pt-4 text-center min-h-full px-6 mb-2
   /* Notebook */
-  md:justify-center md:mb-4 md:pt-6
+  md:justify-center md:mb-4 md:pt-6 md:px-[340px]
+  lg:px-[480px]
   ">
 
     <h1 class="text-1xl font-bold leading-tight text-white mb-8 bg-neutral-800/50 px-4 py-1 rounded-md
@@ -67,8 +68,7 @@ md:min-h-screen md:pt-0 md:pb-0
       ">
 
         <!-- email -->
-        <a [href]="'mailto:' + info.email"
-          class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md 
+        <a [href]="'mailto:' + info.email" class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md 
           text-xs
           md:text-md">
           <!-- icon -->
@@ -80,8 +80,7 @@ md:min-h-screen md:pt-0 md:pb-0
         </a>
 
         <!-- whatsapp -->
-        <a [href]="'https://wa.me/' + info.phone.replace(/\\D/g,'')" target="_blank"
-          class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md
+        <a [href]="'https://wa.me/' + info.phone.replace(/\\D/g,'')" target="_blank" class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md
           text-xs
           md:text-md">
 
@@ -114,7 +113,8 @@ md:min-h-screen md:pt-0 md:pb-0
     w-full animate-slideLeft
 
     /*Noteboon*/
-    md:absolute md:max-w-[450px] md:left-8 md:top-14 md:mt-1">
+    md:absolute md:max-w-[320px] md:left-4 md:top-10
+    lg:max-w-[450px] lg:left-8 lg:top-14 lg:mt-1">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
       </app-cards>
@@ -126,7 +126,8 @@ md:min-h-screen md:pt-0 md:pb-0
     /* Mobile */
 
     /*Noteboon*/
-    md:absolute md:max-w-[450px] md:right-8 md:bottom-16 md:text-right
+    md:absolute md:max-w-[320px] md:right-4 md:bottom-10 md:text-right
+    lg:max-w-[450px] lg:right-8 lg:bottom-16
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
