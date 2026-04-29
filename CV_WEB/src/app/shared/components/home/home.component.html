@@ -113,7 +113,7 @@ md:min-h-screen md:pt-0 md:pb-0
     w-full animate-slideLeft
 
     /*Noteboon*/
-    md:absolute md:max-w-[320px] md:left-4 md:top-10
+    md:absolute md:max-w-[320px] md:left-4 md:top-14
     lg:max-w-[450px] lg:left-8 lg:top-14 lg:mt-1">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
@@ -126,7 +126,7 @@ md:min-h-screen md:pt-0 md:pb-0
     /* Mobile */
 
     /*Noteboon*/
-    md:absolute md:max-w-[320px] md:right-4 md:bottom-10 md:text-right
+    md:absolute md:max-w-[320px] md:right-4 md:bottom-14 md:text-right
     lg:max-w-[450px] lg:right-8 lg:bottom-16
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
