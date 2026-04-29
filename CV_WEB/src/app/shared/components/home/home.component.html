@@ -18,8 +18,8 @@ md:min-h-screen md:pt-0 md:pb-0
   <div class="
   relative z-10 flex flex-col items-center justify-start pt-4 text-center min-h-full px-6 mb-2
   /* Notebook */
-  md:justify-center md:mb-4 md:pt-6 md:px-[340px]
-  lg:px-[480px]
+  md:absolute md:left-1/2 md:-translate-x-1/2 md:justify-center md:mb-0 md:pt-0 md:w-[340px]
+  lg:w-[420px]
   ">
 
     <h1 class="text-1xl font-bold leading-tight text-white mb-8 bg-neutral-800/50 px-4 py-1 rounded-md
@@ -31,8 +31,8 @@ md:min-h-screen md:pt-0 md:pb-0
     <!-- FOTO -->
     <img [src]="info.photo" (error)="onImgError($event)" class="
         w-36 h-36
-        md:w-64 md:h-64
-        lg:w-72 lg:h-72
+        md:w-48 md:h-48
+        lg:w-64 lg:h-64
         rounded-full
         object-cover object-top
         border-8 border-[#FE9F27]
