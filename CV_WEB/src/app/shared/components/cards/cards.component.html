@@ -2,70 +2,58 @@
   h-auto
   /* Mobile */
   overflow-hidden flex flex-col justify-center p-2
-  md:overflow-hidden md:flex md:flex-row md:m-[2%] md:p-4"
->
+  md:overflow-hidden md:flex md:flex-row md:m-[2%] md:p-4">
 
   <!-- conteúdo -->
   <div class="
   w-full h-full
   /* Mobile */
-  md:flex md:flex-row md:flex-wrap md:justify-center md:gap-4
   /* Notebook */
+  lg:flex lg:flex-row lg:flex-wrap lg:justify-center lg:gap-4
 
   ">
 
-    <h2
-      class="
+    <h2 class="
         font-bold text-white w-full text-center
         /* Mobile */
         sm:text-sm
         /* Notebook */
         md:text-lg md:font-bold md:text-neutral-950  md:flex md:flex-col
-        "
-      [ngClass]="invertido ? 'md:text-right md:order-3' : 'md:text-start md:order-1'"
-    >
+        " [ngClass]="invertido ? 'md:text-right md:order-3' : 'md:text-start md:order-1'">
       {{ titulo }}
     </h2>
 
-    <p
-      class="
+    <p class="
       text-neutral-200 h-auto hidden
-      /* Mobile */
-      
-      /* Notbook*/
-      md:block text-sm mt-4 mb-4"
-      [ngClass]="invertido ? 'md:order-2' : 'md:order-2'"
-    >
+      text-sm mt-4 mb-4
+      lg:block
+      " [ngClass]="invertido ? 'md:order-2' : 'md:order-2'
+      ">
       {{ descricao }}
     </p>
 
-    <div
-      class="mt-1 mb-1 flex gap-1 justify-center w-full
-      md:gap-4 md:mt-4 md:mb-4"
-      [class.order-3]="invertido"
-      [ngClass]="invertido ? 'md:justify-end md:order-1' : 'md:justify-start md:order-3'"
-    >
+    <div class="
+    mt-1 mb-1 flex gap-1 justify-center w-full
+    /* Mobile */
+    /* Notebook */
+    lg:gap-4 lg:mt-4 lg:mb-4 
+    " [class.order-3]="invertido
+    " [ngClass]="invertido ? 'md:justify-end md:order-1' : 'md:justify-start md:order-3'
+    ">
 
-      <button
-        class="
+      <button class="
+      bg-blue-400/70 hover:bg-blue-400/50 text-white rounded-lg transition w-[30%] tracking-wide text-xs py-1 px-2
         /* Mobile */
-        bg-blue-400/70 hover:bg-blue-400/50 text-white rounded-lg transition w-[30%] tracking-wide text-xs py-1 px-2
-        
-        /* Notebook */
-        md:py-2 md:px-6 md:text-md"
-        (click)="abrirCurriculo()"
-      >
+        md:py-2 md:px-6 md:text-md
+        "(click)="abrirCurriculo()
+        ">
         Currículum
       </button>
 
-      <button
-        class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white rounded-lg transition w-[30%] tracking-wide text-xs py-1 px-2
+      <button class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white rounded-lg transition w-[30%] tracking-wide text-xs py-1 px-2
         /* Mobile */
-        
-        /* Notebook */
-        md:text-md md:py-2 md:px-6"
-        (click)="abrirPortfolioClick()"
-      >
+        md:text-md md:py-2 md:px-6" (click)="abrirPortfolioClick()
+        ">
         Portfólio
       </button>
 
