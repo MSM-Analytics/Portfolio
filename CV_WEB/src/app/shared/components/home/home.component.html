@@ -25,8 +25,8 @@ md:min-h-screen md:pt-0 md:pb-0
   <div class="
   relative z-10 flex flex-col items-center justify-start pt-4 text-center min-h-full px-6 mb-2 w-[100vw]
   /* Notebook */
-  md:absolute md:left-1/2 md:-translate-x-1/2 md:justify-center md:mb-0 md:pt-0
-  lg:w-[550px]
+  md:left-1/2 md:-translate-x-1/2 md:justify-center md:mb-0 md:pt-0
+  lg:absolute lg:w-[550px]
   ">
 
     <h1 class="text-1xl font-bold leading-tight text-white mb-8 bg-neutral-800/50 px-4 py-1 rounded-md
@@ -109,7 +109,8 @@ md:min-h-screen md:pt-0 md:pb-0
   <div *ngIf="cards.length >= 2" class="
     z-20 gap-2 w-[90%] px-4 h-full bg-neutral-800/50 rounded-md
     /* Mobile */
-    md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-8xl md:gap-2 md:bg-neutral-800/0 md:rounded-none
+    md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-8xl md:gap-2
+    md:bg-neutral-800/0 md:rounded-none md:flex md:flex-col md:items-center md:mt-6
     
     /* Notbook */
     lg:absolute lg:flex lg:flex-row lg:flex-wrap lg:justify-center
@@ -117,13 +118,14 @@ md:min-h-screen md:pt-0 md:pb-0
 
     <!-- CARD ESQUERDA -->
     <div class="
-    w-full animate-slideLeft
+    w-full max-w-[320px] animate-slideLeft
 
     /* Mobile */
     md:static
 
     /*Notebook*/
-    lg:absolute lg:max-w-[450px] lg:left-9 lg:top-14 lg:mt-1">
+    lg:absolute lg:max-w-[450px] lg:left-9 lg:top-14 lg:mt-1
+    ">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
       </app-cards>
@@ -131,7 +133,7 @@ md:min-h-screen md:pt-0 md:pb-0
 
     <!-- CARD DIREITA -->
     <div class="
-    w-full animate-slideLeft
+    w-full max-w-[320px] animate-slideLeft
     /* Mobile */
     md:static
     /*Noteboon*/
