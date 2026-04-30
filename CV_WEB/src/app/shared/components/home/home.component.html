@@ -117,10 +117,10 @@ md:min-h-screen md:pt-0 md:pb-0
 
     <!-- CARD ESQUERDA -->
     <div class="
-    w-full animate-slideLeft
+    absolute w-full animate-slideLeft
 
     /* Mobile */
-    md:absolute md:max-w-[320px] md:left-4 md:top-10
+    md:max-w-[320px] md:left-4 md:top-10
 
     /*Notebook*/
     lg:max-w-[450px] lg:left-9 lg:top-14 lg:mt-1">
@@ -131,11 +131,11 @@ md:min-h-screen md:pt-0 md:pb-0
 
     <!-- CARD DIREITA -->
     <div class="
-    w-full animate-slideLeft
+    absolute w-full animate-slideLeft
     /* Mobile */
 
     /*Noteboon*/
-    md:absolute md:max-w-[320px] md:right-4 md:bottom-10 md:text-right
+    md:max-w-[320px] md:right-4 md:bottom-10 md:text-right
     lg:max-w-[450px] lg:right-12 lg:bottom-16
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
