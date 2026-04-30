@@ -107,23 +107,23 @@ md:min-h-screen md:pt-0 md:pb-0
 
   <!-- OPÇÕES PROFISSIONAIS -->
   <div *ngIf="cards.length >= 2" class="
-    absolute z-20 gap-2 w-[90%] px-4 h-full bg-neutral-800/50 rounded-md
+    z-20 gap-2 w-[90%] px-4 h-full bg-neutral-800/50 rounded-md
     /* Mobile */
     md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-8xl md:gap-2 md:bg-neutral-800/0 md:rounded-none
     
     /* Notbook */
-    lg:flex lg:flex-row lg:flex-wrap lg:justify-center
+    lg:absolute lg:flex lg:flex-row lg:flex-wrap lg:justify-center
   ">
 
     <!-- CARD ESQUERDA -->
     <div class="
-    absolute w-full animate-slideLeft
+    w-full animate-slideLeft
 
     /* Mobile */
-    md:max-w-[320px] md:left-4 md:top-10
+    md:static
 
     /*Notebook*/
-    lg:max-w-[450px] lg:left-9 lg:top-14 lg:mt-1">
+    lg:absolute lg:max-w-[450px] lg:left-9 lg:top-14 lg:mt-1">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
       </app-cards>
@@ -131,12 +131,11 @@ md:min-h-screen md:pt-0 md:pb-0
 
     <!-- CARD DIREITA -->
     <div class="
-    absolute w-full animate-slideLeft
+    w-full animate-slideLeft
     /* Mobile */
-
+    md:static
     /*Noteboon*/
-    md:max-w-[320px] md:right-4 md:bottom-10 md:text-right
-    lg:max-w-[450px] lg:right-12 lg:bottom-16
+    lg: absolute lg:max-w-[450px] lg:right-12 lg:bottom-16
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
