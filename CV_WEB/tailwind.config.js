@@ -5,9 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        'tablet': { 'min': '768px', 'max': '900px' },
-      },
       fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
