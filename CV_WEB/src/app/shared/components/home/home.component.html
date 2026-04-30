@@ -107,20 +107,22 @@ md:min-h-screen md:pt-0 md:pb-0
 
   <!-- OPÇÕES PROFISSIONAIS -->
   <div *ngIf="cards.length >= 2" class="
-    z-20
+    z-20 gap-2 w-[90%] px-4 h-full bg-neutral-800/50 rounded-md
     /* Mobile */
-    flex flex-row flex-wrap justify-center gap-2 w-[90%] px-4 h-full bg-neutral-800/50 rounded-md
-    /* Notbook */
     md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 md:w-full md:max-w-8xl md:gap-2 md:bg-neutral-800/0 md:rounded-none
+    
+    /* Notbook */
+    lg:flex lg:flex-row lg:flex-wrap lg:justify-center
   ">
 
     <!-- CARD ESQUERDA -->
     <div class="
-    /* Mobile */
     w-full animate-slideLeft
 
-    /*Noteboon*/
+    /* Mobile */
     md:absolute md:max-w-[320px] md:left-4 md:top-10
+
+    /*Notebook*/
     lg:max-w-[450px] lg:left-9 lg:top-14 lg:mt-1">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
