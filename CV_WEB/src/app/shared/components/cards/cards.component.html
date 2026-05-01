@@ -1,13 +1,12 @@
 <div class="
   h-auto overflow-hidden flex flex-col justify-center p-2
   /* Mobile */
-  /* md:flex md:flex-row md:m-[2%] md:p-4 md:mt-8 */
-  lg:flex lg:flex-row lg:m-[2%] lg:p-4 lg:mt-8
+  md:flex md:flex-row md:m-[2%] md:p-4 md:mt-8
   ">
 
   <!-- conteúdo -->
   <div class="
-  w-full h-full
+  w-full h-auto
   /* Notebook */
   lg:flex lg:flex-row lg:flex-wrap lg:justify-center lg:gap-4
 
@@ -44,7 +43,7 @@
       <button class="
       bg-blue-400/70 hover:bg-blue-400/50 text-white rounded-lg transition w-[30%] tracking-wide text-xs py-1 px-2
         /* Mobile */
-        md:py-2 md:px-6 md:text-md
+        md:py-2 md:px-6 md:text-md md:w-[45%]
         "(click)="abrirCurriculo()
         ">
         Currículum
@@ -52,7 +51,8 @@
 
       <button class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white rounded-lg transition w-[30%] tracking-wide text-xs py-1 px-2
         /* Mobile */
-        md:text-md md:py-2 md:px-6" (click)="abrirPortfolioClick()
+        md:text-md md:py-2 md:px-6 md:w-[45%]
+        "(click)="abrirPortfolioClick()
         ">
         Portfólio
       </button>
