@@ -112,7 +112,7 @@
 
   <!-- OPÇÕES PROFISSIONAIS -->
   <div *ngIf="cards.length >= 2" class="
-    z-20 gap-2 w-[90%] p-4 h-auto bg-neutral-800/50 rounded-md 
+    z-20 space-y-3 w-[90%] p-4 h-auto bg-neutral-800/50 rounded-md 
     flex flex-col items-center
 
     /* Mobile */
@@ -125,7 +125,7 @@
 
     <!-- CARD ESQUERDA -->
     <div class="
-    w-full max-w-[320px] animate-slideLeft
+    w-full max-w-[320px] animate-slideLeft relative
 
     /* Mobile */
     md:static md:mx-auto
@@ -140,11 +140,11 @@
 
     <!-- CARD DIREITA -->
     <div class="
-    w-full max-w-[320px] animate-slideLeft
+    w-full max-w-[320px] animate-slideLeft relative
     /* Mobile */
     md:static md:mx-auto
     /*Noteboon*/
-    lg: absolute lg:max-w-[450px] lg:right-12 lg:bottom-16 lg:pointer-events-auto
+    lg:absolute lg:max-w-[450px] lg:right-12 lg:bottom-16 lg:pointer-events-auto
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
