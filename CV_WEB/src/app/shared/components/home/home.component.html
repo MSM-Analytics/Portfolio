@@ -1,6 +1,6 @@
 <header class="relative w-full min-h-[100svh] overflow-hidden 
   flex flex-col justify-start items-center pt-6 gap-4
-  md:min-h-screen md:pt-10 md:gap-8
+  md:min-h-screen md:pt-10
   lg:justify-center lg:pt-0
 ">
 
@@ -27,7 +27,7 @@
   <div class="
   relative z-10 flex flex-col items-center justify-start mt-10 text-center min-h-full px-6 mb-2 w-[100vw]
   /* mobile */
-  md:justify-center md:top-0 md:bottom-auto md:pt-10
+  md:justify-center md:top-0 md:bottom-auto md:pt-10 md:gap-3
   /* Notebook */
   lg:max-w-[600px] lg:w-full lg:mx-auto
   ">
@@ -111,9 +111,10 @@
   <!-- OPÇÕES PROFISSIONAIS -->
   <div *ngIf="cards.length >= 2" class="
     z-20 gap-2 w-[90%] px-4 h-full bg-neutral-800/50 rounded-md
+    
     /* Mobile */
     md:flex md:flex-col md:items-center md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2
-    md:w-full md:min-h-screen md:max-w-8xl md:gap-4 md:bg-neutral-800/0 md:rounded-none md:mt-6
+    md:gap-4 md:bg-neutral-800/0 md:rounded-none md:mt-12
     
     /* Notbook */
     lg:absolute lg:inset-0 lg:pointer-events-none lg:flex lg:flex-row lg:flex-wrap lg:justify-center
