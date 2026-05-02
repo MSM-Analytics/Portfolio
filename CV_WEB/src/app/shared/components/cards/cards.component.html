@@ -16,9 +16,11 @@
         font-bold text-white w-full text-center
         /* Mobile */
         sm:text-sm
+        md:text-lg md:font-bold md:text-white  md:flex md:flex-col
         /* Notebook */
-        md:text-lg md:font-bold md:text-neutral-950  md:flex md:flex-col
-        " [ngClass]="invertido ? 'md:text-right md:order-3' : 'md:text-start md:order-1'">
+        lg:text-neutral-950
+        "[ngClass]="invertido ? 'md:text-right md:order-3' : 'md:text-start md:order-1'
+        ">
       {{ titulo }}
     </h2>
 
