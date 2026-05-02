@@ -45,9 +45,9 @@
         lg:w-64 lg:h-64
         rounded-full
         object-cover object-top
-        border-3
+        border-3 border-[#FE9F27]
+        md:border-6
         lg:border-8
-        border-[#FE9F27]
         shadow-[0_30px_350px_rgba(100,100,100,1)]
         animate-fadeUp
         z-20
@@ -132,7 +132,7 @@
     md:static md:mx-auto
 
     /*Notebook*/
-    lg:absolute lg:max-w-[450px] lg:left-9 lg:top-14 lg:mt-1 lg:pointer-events-auto
+    lg:absolute lg:max-w-[450px] lg:left-8 lg:top-12 lg:mt-1 lg:pointer-events-auto
     ">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
@@ -145,7 +145,7 @@
     /* Mobile */
     md:static md:mx-auto
     /*Noteboon*/
-    lg:absolute lg:max-w-[450px] lg:right-12 lg:bottom-16 lg:pointer-events-auto
+    lg:absolute lg:max-w-[450px] lg:right-6 lg:bottom-16 lg:pointer-events-auto
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
