@@ -132,7 +132,7 @@
     md:static md:mx-auto
 
     /*Notebook*/
-    lg:absolute lg:max-w-[450px] lg:left-6 lg:top-12 lg:mt-1 lg:pointer-events-auto
+    lg:absolute lg:max-w-[450px] lg:left-8 lg:top-8 lg:mt-1 lg:pointer-events-auto
     ">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
@@ -145,7 +145,7 @@
     /* Mobile */
     md:static md:mx-auto
     /*Noteboon*/
-    lg:absolute lg:max-w-[450px] lg:right-2 lg:bottom-16 lg:pointer-events-auto
+    lg:absolute lg:max-w-[450px] lg:-right-6 lg:bottom-16 lg:pointer-events-auto
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
