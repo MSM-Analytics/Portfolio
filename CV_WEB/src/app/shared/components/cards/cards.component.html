@@ -1,5 +1,5 @@
 <div class="
-  h-auto overflow-hidden flex flex-col justify-center gap-1 mt-1 mb-1 w-full
+  h-auto overflow-hidden flex flex-col justify-between gap-1 mt-1 mb-1 w-full
   /* Tablet */
   md:flex md:flex-row
   /* Notebook */
@@ -19,10 +19,10 @@
         /* Mobile */
         sm:text-sm
         /* Tablet */
-        md:text-lg md:font-bold md:text-white  md:flex md:flex-col md:text-start
+        md:text-lg md:font-bold md:text-white  md:flex md:flex-col
         /* Notebook */
         lg:text-neutral-950
-        "[ngClass]="invertido ? 'md:text-right md:order-3' : 'md:text-start md:order-1'
+        "[ngClass]="invertido ? 'lg:text-right md:order-3' : 'lg:text-start md:order-1'
         ">
       {{ titulo }}
     </h2>
@@ -39,9 +39,9 @@
     <div class="
     mt-1 mb-1 flex gap-1 justify-center w-full
     /* Mobile */
+
     /* Notebook */
-    lg:gap-4 lg:mt-4 lg:mb-4 
-    " [class.order-3]="invertido
+    lg:gap-4 lg:mt-4 lg:mb-4
     " [ngClass]="invertido ? 'md:justify-end md:order-1' : 'md:justify-start md:order-3'
     ">
 
