@@ -1,16 +1,34 @@
 <div class="
-  h-auto overflow-hidden flex flex-col justify-between gap-1 mt-1 mb-1 w-full
-  /* Tablet */
-  md:flex md:flex-row
-  /* Notebook */
- lg:m-[2%] lg:p-4 lg:mt-8
+  h-auto
+  overflow-hidden
+  flex 
+  flex-col
+  justify-between
+  items-center
+  gap-3
+  mt-1
+  mb-1
+  w-full
+  
+  md:flex
+  md:flex-row
+  
+  lg:m-[2%]
+  lg:p-4
+  lg:mt-8
   ">
 
   <!-- conteúdo -->
   <div class="
-  w-full gap-1
-  /* Notebook */
-  lg:flex lg:flex-row lg:flex-wrap lg:justify-center lg:gap-4
+  w-full
+  gap-2
+  items-center
+
+  lg:flex
+  lg:flex-row
+  lg:flex-wrap
+  lg:gap-4
+  "[ngClass]="invertido ? 'lg:justify-end' : 'lg:justify-start'
 
   ">
 
@@ -31,7 +49,7 @@
       text-neutral-200 h-auto hidden
       text-sm mt-4 mb-4
       lg:block
-      " [ngClass]="invertido ? 'md:order-2' : 'md:order-2'
+      " [ngClass]="invertido ? 'text-end order-2' : 'text-start order-2'
       ">
       {{ descricao }}
     </p>
@@ -44,21 +62,50 @@
     ">
 
       <button class="
-      bg-blue-400/70 hover:bg-blue-400/50 text-white rounded-lg transition 
-      w-[80%] tracking-wide text-xs py-1 px-2
-        /* Mobile */
-        md:py-2 md:px-6 md:text-md md:w-[45%]
-        " (click)="abrirCurriculo()
-        ">
+      bg-blue-400/70
+      hover:bg-blue-400/50
+      text-white rounded-lg
+      transition
+      w-[45%]
+      max-w-[180px]
+      tracking-wide
+      text-xs
+      py-1
+      px-2
+
+      md:py-2
+      md:px-6
+      md:text-md
+      md:max-w-[250px]
+        
+      lg:w-[50%]
+      " (click)="abrirCurriculo()
+      ">
         Currículum
       </button>
 
-      <button class="bg-emerald-400/70 hover:bg-emerald-400/50 text-white rounded-lg transition
-       w-[80%] tracking-wide text-xs py-1 px-2
-        /* Mobile */
-        md:text-md md:py-2 md:px-6 md:w-[45%]
-        " (click)="abrirPortfolioClick()
-        ">
+      <button class="
+      bg-emerald-400/70
+      hover:bg-emerald-400/50
+      text-white
+      rounded-lg
+      transition
+      w-[45%]
+      max-w-[180px]
+      tracking-wide
+      text-xs
+      py-1
+      px-2
+      
+      md:text-md
+      md:py-2
+      md:px-6
+      md:max-w-[250px]
+
+      lg:w-[50%]
+
+      " (click)="abrirPortfolioClick()
+      ">
         Portfólio
       </button>
 

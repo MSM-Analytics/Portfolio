@@ -1,37 +1,80 @@
-<header class="relative w-full min-h-[100svh] overflow-hidden 
-  flex flex-col justify-start items-center gap-4
-  lg:justify-center lg:pt-0
+<header class="
+  relative w-full h-[100svh] overflow-hidden
+
+  grid
+  grid-rows-[auto_auto]
+  grid-cols-1
+
+  lg:grid-rows-1
+  lg:grid-cols-[34%_32%_34%]
+
+  justify-items-center
+  items-center
 ">
 
   <!-- BACKGROUND -->
   <img src="assets/images/bg-dados.png" class="absolute inset-0 w-full h-full object-cover" />
 
-  <!-- BG Content-->
-  <div class="hidden absolute inset-0 left-2 ml-7 animate-reveal-left
-  md:top-0
-  lg:block lg:top-0
-  ">
-    <img src="assets/images/img-left.png" alt="left" />
-  </div>
-
+  <!-- CARD ESQUERDA -->
   <div class="
-  hidden absolute bottom-0 right-4 mr-7 animate-reveal-right
-  md:bottom-0
-  lg:block lg:bottom-0
-  ">
-    <img src="assets/images/img-right.png" alt="right" />
+      relative
+      z-10
+      hidden
+      animate-slideLeft
+      
+      lg:grid
+      lg:grid-rows-2
+      
+      w-full
+      h-full
+
+      lg:col-start-1
+    ">
+    <div class="
+      row-start-1
+      relative
+      w-full
+      h-full
+    ">
+      <img src="assets/images/img-left.png" alt="left" class="
+        absolute
+        inset-0
+        top-[5%]
+        left-[2%]
+        w-[134%]
+        h-full
+        object-fill
+        max-w-none
+      " />
+    </div>
+    <div class="
+    absolute
+    top-[8%]
+    left-[3.5%]
+    ">
+      <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
+        (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
+      </app-cards>
+    </div>
   </div>
 
   <!-- CONTEÚDO CENTRAL -->
   <div class="
-  relative z-10 flex flex-col items-center justify-start text-center min-h-full mt-16 px-6 w-[100vw]
-  /* mobile */
-  md:justify-center md:top-12 md:bottom-auto md:gap-3 md:mt-32
-  /* Notebook */
-  lg:top-0 lg:mt-8 lg:max-w-[600px] lg:w-full lg:mx-auto
+    relative
+    z-10
+    w-full
+    h-full
+    grid
+    grid-rows-[auto_1fr_auto]
+    grid-cols-1
+    justify-items-center
+    content-center
+    items-end
+    text-center
+    p-6
   ">
-
-    <h1 class="text-1xl font-bold leading-tight text-white mb-8 bg-neutral-800/50 px-4 py-1 rounded-md
+    <h1 class="text-1xl font-bold leading-tight text-white mb-8 bg-neutral-800/50 px-4 py-1
+    rounded-md 
     md:text-3xl md:mb-8
     ">
       {{ info.name }}
@@ -54,7 +97,7 @@
       " />
 
     <!-- TEXTO -->
-    <div class="text-white mt-3 animate-fadeDown z-10
+    <div class="text-white animate-fadeDown z-10
     md:mt-6">
 
       <!-- info pessoal -->
@@ -110,46 +153,83 @@
 
   </div>
 
-  <!-- OPÇÕES PROFISSIONAIS -->
-  <div *ngIf="cards.length >= 2" class="
-    z-20 space-y-3 w-[90%] p-4 h-auto bg-neutral-800/50 rounded-md 
-    flex flex-col items-center mt-8 gap-3
+  <!-- CARD DIREITA -->
+  <div class="
+    relative
+    w-full
+    h-full
+    z-5
+    animate-slideRight
+    hidden
 
-    /* Mobile */
-    md:left-auto md:right-0 md:gap-4 md:flex md:flex-row md:justify-between md:mt-28
-    
-    /* Notbook */
-    lg:absolute lg:inset-0 lg:pointer-events-none lg:flex lg:flex-row lg:flex-wrap lg:justify-between
-    lg:translate-x-[10%] lg:translate-y-[30] lg:gap-6 lg:bg-neutral-800/0 lg:rounded-none lg:mt-8
+    lg:grid
+    grid-rows-2
+    lg:col-start-3
     ">
-
-    <!-- CARD ESQUERDA -->
     <div class="
-    w-full max-w-[300px] animate-slideLeft relative
-
-    /* Mobile */
-    md:static md:mx-auto
-
-    /*Notebook*/
-    lg:absolute lg:max-w-[400px] lg:left-9 lg:top-1 lg:mt-1 lg:pointer-events-auto
+    relative
+    inset-0
+    w-full
+    h-full
+    row-start-2
     ">
-      <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
-        (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
-      </app-cards>
+    <img src="assets/images/img-right.png" alt="right" class="
+        absolute
+        bottom-[5%]
+        right-[2%]
+        w-[136%]
+        h-full
+        object-fill
+        max-w-none
+      " />
     </div>
-
-    <!-- CARD DIREITA -->
     <div class="
-    w-full max-w-[300px] animate-slideLeft relative
-    /* Mobile */
-    md:static md:mx-auto
-    /*Noteboon*/
-    lg:absolute lg:max-w-[400px] lg:-right-16 lg:-mr-2 lg:bottom-16 lg:pointer-events-auto
+    absolute
+    bottom-[12.5%]
+    right-[8.5%]
+    z-20
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
       </app-cards>
     </div>
+  </div>
 
+  <!-- Cards Mobile -->
+  <div class="
+    w-[90%]
+    h-[90%]
+    bg-neutral-800/50
+    rounded-md
+    animate-slideLeft
+    relative
+    grid
+    grid-cols-1
+    grid-rows-2
+    gap-4
+
+    md:grid-cols-2
+    md:grid-rows-1
+
+    lg:w-full
+    lg:h-full
+    lg:hidden
+    ">
+      <app-cards 
+      class="w-full max-w-[420px]"
+      [titulo]="cards[0].title" 
+      [descricao]="cards[0].description" 
+      [tipo]="cards[0].route"
+      (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
+      </app-cards>
+  
+      <app-cards 
+      class="w-full max-w-[420px]"
+      [tipo]="cards[1].route" 
+      [descricao]="cards[1].description" 
+      [titulo]="cards[1].title" 
+      [invertido]="true">
+      (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
+      </app-cards>
   </div>
 </header>
