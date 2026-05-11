@@ -2,15 +2,6 @@ import { DataPortfolioItem } from '../../models/curriculum.model';
 
 export const PORTFOLIO_DATA_JS: DataPortfolioItem[] = [
   {
-    id: 'ecommerce',
-    title: 'Loja Vestuário',
-    description: 'Ecommerce para loja de roupas',
-    projectPath: 'Vestuário',
-    thumbnail: 'assets/images/consultoria-DB.png',
-    tags: ['Ângular', 'Tailwind', 'JS', 'Responsivo']
-  },
-
-  {
     id: 'automotivo',
     title: 'Site Automotivo',
     description: 'Landing page para loja de carros importados.',
