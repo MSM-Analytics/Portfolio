@@ -28,6 +28,8 @@
   lg:flex-row
   lg:flex-wrap
   lg:gap-4
+
+  2xl:gap-10
   "[ngClass]="invertido ? 'lg:justify-end' : 'lg:justify-start'
 
   ">
@@ -40,6 +42,7 @@
         md:text-lg md:font-bold md:text-white  md:flex md:flex-col
         /* Notebook */
         lg:text-neutral-950
+        2xl:text-4xl
         "[ngClass]="invertido ? 'lg:text-right md:order-3' : 'lg:text-start md:order-1'
         ">
       {{ titulo }}
@@ -49,6 +52,8 @@
       text-neutral-200 h-auto hidden
       text-sm mt-4 mb-4
       lg:block
+      lg:text-md
+      2xl:text-xl
       " [ngClass]="invertido ? 'text-end order-2' : 'text-start order-2'
       ">
       {{ descricao }}
@@ -79,6 +84,9 @@
       md:max-w-[250px]
         
       lg:w-[50%]
+      lg:text-md
+
+      2xl:text-lg
       " (click)="abrirCurriculo()
       ">
         Currículum
@@ -103,6 +111,9 @@
       md:max-w-[250px]
 
       lg:w-[50%]
+      lg:text-md
+
+      2xl:text-lg
 
       " (click)="abrirPortfolioClick()
       ">

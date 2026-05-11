@@ -23,13 +23,11 @@
       z-10
       hidden
       animate-slideLeft
+      w-full
+      h-full
       
       lg:grid
       lg:grid-rows-2
-      
-      w-full
-      h-full
-
       lg:col-start-1
     ">
     <div class="
@@ -43,16 +41,19 @@
         inset-0
         top-[5%]
         left-[2%]
-        w-[134%]
+        w-[136%]
         h-full
         object-fill
         max-w-none
+        2xl:w-[138%]
       " />
     </div>
     <div class="
     absolute
     top-[8%]
-    left-[3.5%]
+    left-[4%]
+
+    2xl:top-[14.5%]
     ">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
@@ -67,11 +68,12 @@
     w-full
     h-full
     grid
-    grid-rows-[auto_1fr_auto]
+    grid-rows-[1fr_1fr_1fr]
     grid-cols-1
     justify-items-center
     content-center
     items-end
+    2xl:place-items-center
     text-center
     p-6
   ">
@@ -89,6 +91,8 @@
     md:text-3xl
 
     lg:mt-0
+
+    2xl:text-6xl
     ">
       {{ info.name }}
     </h1>
@@ -98,6 +102,7 @@
         w-36 h-36
         md:w-48 md:h-48
         lg:w-64 lg:h-64
+        2xl:w-96 2xl:h-96
         rounded-full
         object-cover object-top
         border-2 border-[#FE9F27]
@@ -116,7 +121,9 @@
       <!-- info pessoal -->
       <p class="bg-neutral-800/50 rounded-md
                 text-xs text-neutral-200 mt-3 px-4 py-1
-                md:text-sm md:text-neutral-200 md:mt-3 md:px-4 md:py-1">
+                md:text-sm md:text-neutral-200 md:mt-3 md:px-4 md:py-1
+                2xl:text-2xl
+                ">
         <span *ngIf="info.maritalStatus">
           {{ info.maritalStatus }}
         </span>
@@ -138,7 +145,9 @@
         <!-- email -->
         <a [href]="'mailto:' + info.email" class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md 
           text-xs
-          md:text-md">
+          md:text-md
+          2xl:text-xl
+          ">
           <!-- icon -->
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 6 9-6M4 6h16v12H4z" />
@@ -150,7 +159,9 @@
         <!-- whatsapp -->
         <a [href]="'https://wa.me/' + info.phone.replace(/\\D/g,'')" target="_blank" class="flex items-center gap-2 hover:text-white transition bg-neutral-800/50 px-4 py-1 rounded-md
           text-xs
-          md:text-md">
+          md:text-md
+          2xl:text-xl
+          ">
 
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -194,6 +205,9 @@
         h-full
         object-fill
         max-w-none
+
+        2xl:w-[138%]
+        2xl:bottom-[4%]
       " />
     </div>
     <div class="
@@ -201,6 +215,8 @@
     bottom-[12.5%]
     right-[8.5%]
     z-20
+
+    2xl:bottom-[15.5%]
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
