@@ -53,7 +53,7 @@
     top-[8%]
     left-[4%]
 
-    2xl:top-[14.5%]
+    2xl:top-[13%]
     ">
       <app-cards [titulo]="cards[0].title" [descricao]="cards[0].description" [tipo]="cards[0].route"
         (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)">
@@ -92,7 +92,7 @@
 
     lg:mt-0
 
-    2xl:text-6xl
+    2xl:text-3xl
     ">
       {{ info.name }}
     </h1>
@@ -122,7 +122,7 @@
       <p class="bg-neutral-800/50 rounded-md
                 text-xs text-neutral-200 mt-3 px-4 py-1
                 md:text-sm md:text-neutral-200 md:mt-3 md:px-4 md:py-1
-                2xl:text-2xl
+                2xl:text-xl
                 ">
         <span *ngIf="info.maritalStatus">
           {{ info.maritalStatus }}
@@ -216,7 +216,8 @@
     right-[8.5%]
     z-20
 
-    2xl:bottom-[15.5%]
+    2xl:bottom-[15%]
+    2xl:right-[9%]
     ">
       <app-cards [tipo]="cards[1].route" (abrir)="abrirCurriculo($event)" (abrirPortfolio)="abrirPortfolio($event)"
         [descricao]="cards[1].description" [titulo]="cards[1].title" [invertido]="true">
